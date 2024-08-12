@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - HTML LIVE Editor</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML Live editor</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/ace.js"></script>
+</head>
+
+<body onload="ready()">
+  <div><img id="blank" src="https://juandevgroup.github.io/blank.jpeg" width="100px"></div>
+  <img id="favicon" src="https://juandevgroup.github.io/meps_logo.png">
+  <!-- Botón para cargar código en el editor -->
+<button id="load-code-btn">Cargar código de ejemplo:JW.ORG</button>
+
+  <!-- Botón para borrar todo el contenido del editor -->
+<button id="clear-btn">Borrar todo</button>
+  <!-- Botón para exportar HTML -->
+    <button id="export-btn">Exportar HTML</button>
+  <div id="container">
+    <!-- Left Side Editor -->
+    <div id="editor"></div>
+
+    <!-- Right Side preview -->
+    <iframe src="" frameborder="0" id="iframe"></iframe>
+
+  </div>
+
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

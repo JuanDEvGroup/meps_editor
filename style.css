@@ -1,0 +1,135 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#editor {
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+}
+
+#iframe {
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+}
+
+#container {
+  height: 100%;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+ #export-btn {
+    /* Estilos del botón */
+    background-color: #4CAF50; /* Verde claro */
+    color: #ffffff; /* Blanco */
+    padding: 10px 20px; /* Espacio entre el texto y el borde */
+    border: none; /* No borde */
+    border-radius: 5px; /* Curva en los bordes */
+    cursor: pointer; /* Cursor en forma de mano */
+  }
+
+  #export-btn:hover {
+    /* Estilos del botón al pasar el mouse por encima */
+    background-color: #3e8e41; /* Verde oscuro */
+  }
+
+  #export-btn:active {
+    /* Estilos del botón al hacer clic */
+    background-color: #2e6c31; /* Verde más oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+  #clear-btn {
+    /* Estilos del botón */
+    background-color: #4CAF50; /* Verde claro */
+    color: #ffffff; /* Blanco */
+    padding: 10px 20px; /* Espacio entre el texto y el borde */
+    border: none; /* No borde */
+    border-radius: 5px; /* Curva en los bordes */
+    cursor: pointer; /* Cursor en forma de mano */
+  }
+
+  #clear-btn:hover {
+    /* Estilos del botón al pasar el mouse por encima */
+    background-color: #3e8e41; /* Verde oscuro */
+  }
+
+  #clear-btn:active {
+    /* Estilos del botón al hacer clic */
+    background-color: #2e6c31; /* Verde más oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+
+   #load-code-btn {
+    /* Estilos del botón */
+    background-color: #4CAF50; /* Verde claro */
+    color: #ffffff; /* Blanco */
+    padding: 10px 20px; /* Espacio entre el texto y el borde */
+    border: none; /* No borde */
+    border-radius: 5px; /* Curva en los bordes */
+    cursor: pointer; /* Cursor en forma de mano */
+  }
+
+  #load-code-btn:hover {
+    /* Estilos del botón al pasar el mouse por encima */
+    background-color: #3e8e41; /* Verde oscuro */
+  }
+
+  #load-code-btn:active {
+    /* Estilos del botón al hacer clic */
+    background-color: #2e6c31; /* Verde más oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+  /* Favicon Fluent Design */
+
+.favicon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0078d7; /* Azul Fluent */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.favicon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.favicon::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Blanco */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.favicon::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0078d7; /* Azul Fluent */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.favicon {
+  transform: scale(0.20); /* Reducir el tamaño a 75% */
+}
