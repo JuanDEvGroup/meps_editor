@@ -133,3 +133,102 @@ body {
 .favicon {
   transform: scale(0.20); /* Reducir el tamaño a 75% */
 }
+
+  #import-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#import-btn:hover {
+  background-color: #3e8e41;
+}
+
+#import-btn:active {
+  background-color: #2f6f31;
+}
+
+#import-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+   #loadwol-code-btn {
+    /* Estilos del botón */
+    background-color: #4CAF50; /* Verde claro */
+    color: #ffffff; /* Blanco */
+    padding: 10px 20px; /* Espacio entre el texto y el borde */
+    border: none; /* No borde */
+    border-radius: 5px; /* Curva en los bordes */
+    cursor: pointer; /* Cursor en forma de mano */
+  }
+
+  #loadwol-code-btn:hover {
+    /* Estilos del botón al pasar el mouse por encima */
+    background-color: #3e8e41; /* Verde oscuro */
+  }
+
+  #loadwol-code-btn:active {
+    /* Estilos del botón al hacer clic */
+    background-color: #2e6c31; /* Verde más oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+  #refreshButton {
+  /* Estilo del botón */
+  background-color: #4CAF50; /* Verde claro */
+  color: #fff; /* Blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Relleno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor en forma de mano */
+  border-radius: 5px; /* Esquinas redondeadas */
+  transition: background-color 0.3s ease-in-out; /* Transición suave */
+}
+
+#refreshButton:hover {
+  /* Estilo al pasar el mouse por encima */
+  background-color: #3e8e41; /* Verde oscuro */
+}
+
+#refreshButton:active {
+  /* Estilo al hacer clic */
+  background-color: #2e6d31; /* Verde más oscuro */
+  transform: translateY(2px); /* Desplazamiento hacia abajo */
+}
+
+
+
+
+ #show-iframe-btn {
+  /* Estilo del botón */
+  background-color: #4CAF50; /* Verde claro */
+  color: #fff; /* Blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Relleno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor en forma de mano */
+  border-radius: 5px; /* Esquinas redondeadas */
+  transition: background-color 0.3s ease-in-out; /* Transición suave */
+}
+
+#show-iframe-btn:hover {
+  /* Estilo al pasar el mouse por encima */
+  background-color: #3e8e41; /* Verde oscuro */
+}
+
+#show-iframe-btn:active {
+  /* Estilo al hacer clic */
+  background-color: #2e6d31; /* Verde más oscuro */
+  transform: translateY(2px); /* Desplazamiento hacia abajo */
+}
+
+
