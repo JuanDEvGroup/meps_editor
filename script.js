@@ -74,6 +74,14 @@ document.getElementById('export-btn').addEventListener('click', function() {
       a.href = url;
       a.download = 'exported_html.html';
       a.click();
+
+       // Muestra un mensaje de confirmación con SweetAlert2
+    Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo HTML se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
     });
 
 document.getElementById('clear-btn').addEventListener('click', function() {
@@ -8333,3 +8341,1431 @@ document.getElementById('load-code-btn').addEventListener('click', function() {
     editor.setValue(code); // Establece el valor del editor con el código
     editor.gotoLine(1); // Coloca el cursor en la primera línea
   });
+
+  const importBtn = document.getElementById('import-btn');
+  const htmlFileInput = document.getElementById('html-file-input');
+  const editorDiv = document.getElementById('editor');
+
+  importBtn.addEventListener('click', () => {
+    htmlFileInput.click();
+  });
+
+  htmlFileInput.addEventListener('change', () => {
+    const file = htmlFileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const fileContentBase64 = reader.result;
+      const fileContent = atob(fileContentBase64.split(',')[1]);
+      const aceEditor = ace.edit("editor");
+      aceEditor.session.setValue(fileContent);
+      aceEditor.session.setMode("ace/mode/html");
+    };
+
+    reader.readAsDataURL(file);
+  });
+
+document.getElementById('loadwol-code-btn').addEventListener('click', function() {
+    var editor = ace.edit("editor"); // Asigna el editor a una variable
+    var code = `
+
+      <!-- HTML -->
+
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="es">
+<head>
+    <title>BIBLIOTECA EN LÍNEA Watchtower</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+          <meta name="description" content="Esta es una página web oficial de los testigos de Jehová. Es una herramienta que le permitirá consultar las publicaciones de los testigos de Jehová en varios idiomas."/>
+        <meta name="keywords" content="testigos de jehová, jehová, testigo, watchtower, biblioteca, en línea, publicaciones, online"/>
+      <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+  
+    <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="/icon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="/icon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/icon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="mask-icon" href="/icon/safari-pinned-tab.svg" color="#799FCC">
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <meta name="msapplication-config" content="/icon/browserconfig.xml">
+    <meta name="apple-mobile-web-app-title" content="WOL">
+    <meta name="application-name" content="WOL">
+    <meta name="theme-color" content="#799fcc">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-capable" content="no"/>
+  <link rel="stylesheet" type="text/css" href="https://b.jw-cdn.org/code/media-player/v3.0.0/css/media-player.css"/><link rel="stylesheet" type="text/css" href="https://wol.jw.org/assets/css/+0+974f270baf9554651558d525c4fb9b2bbaba7049.css"/><link rel="stylesheet" type="text/css" href="https://wol.jw.org/assets/css/+1+eda9e25e8d65b8146f2068ea6cf0d4486172ce3d.css"/><link rel="stylesheet" type="text/css" href="https://wol.jw.org/assets/css/+2+6ce19a260aa5f120cd7b7d57260e2d4293db7ce0.css"/><link rel="stylesheet" type="text/css" href="https://wol.jw.org/assets/css/+3+89e08fdabc6548003d4cd93c1c885553d3865a32.css"/>
+            <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="mio" href="/mio/wol/h/r996/lp-mxc" />
+          <link rel="alternate" type="text/html" title="IBIBLIYOTEKA YO MWINTERNETINI yo Watchtower
+" hreflang="mgh" href="/mgh/wol/h/r993/lp-mwm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARYA" hreflang="mrw" href="/mrw/wol/h/r992/lp-mw" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARYA" hreflang="mdh" href="/mdh/wol/h/r991/lp-mu" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA ONLINE Watchtower" hreflang="pap" href="/pap/wol/h/r99/lp-pa" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKITABA MU NTANDAU" hreflang="mgv" href="/mgv/wol/h/r988/lp-mtn" />
+          <link rel="alternate" type="text/html" title="BIBIYOTÈK ASOU ENTÈNÈT 
+Watchtower" hreflang="gcf-x-mtc" href="/gcf-x-mtc/wol/h/r986/lp-mtc" />
+          <link rel="alternate" type="text/html" title="IBIKIRO LY'OKU ENTERNETE Watchtower" hreflang="shr" href="/shr/wol/h/r983/lp-msh" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="mas" href="/mas/wol/h/r982/lp-ms" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="mrj" href="/mrj/wol/h/r980/lp-mrh" />
+          <link rel="alternate" type="text/html" title="Watchtower
+BIBLIOTECA ITECH TEPOS " hreflang="ncj" href="/ncj/wol/h/r98/lp-nht" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="mdf" href="/mdf/wol/h/r973/lp-mok" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="cnr" href="/cnr/wol/h/r972/lp-mnt" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sgn-PG" href="/sgn-PG/wol/h/r971/lp-mns" />
+          <link rel="alternate" type="text/html" title="Wɔ̃lagɛ̃kama FÃÃLA KIIKAAPIA" hreflang="mev" href="/mev/wol/h/r970/lp-mno" />
+          <link rel="alternate" type="text/html" title="Хъахъхъӕнӕн мӕсыджы ОНЛАЙН-БИБЛИОТЕКӔ" hreflang="os" href="/os/wol/h/r97/lp-oss" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mnk" href="/mnk/wol/h/r967/lp-mnk" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="mns" href="/mns/wol/h/r966/lp-mni" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEKA ONLINE" hreflang="mgm-x-mme" href="/mgm-x-mme/wol/h/r961/lp-mme" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA Watchtower" hreflang="mau" href="/mau/wol/h/r96/lp-maz" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="mln" href="/mln/wol/h/r955/lp-mlg" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEKA ONLINE" hreflang="mkz-x-mks" href="/mkz-x-mks/wol/h/r953/lp-mks" />
+          <link rel="alternate" type="text/html" title="ŨTHUTHURIA INTANETI-INĨ" hreflang="ki" href="/ki/wol/h/r95/lp-kq" />
+          <link rel="alternate" type="text/html" title="IBIBLIYOTEKA yapa Inteleneti" hreflang="kde" href="/kde/wol/h/r948/lp-mkd" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEK DI INTERNET " hreflang="mfv" href="/mfv/wol/h/r947/lp-mjk" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="vmk" href="/vmk/wol/h/r945/lp-mhs" />
+          <link rel="alternate" type="text/html" title="Watchtower EBIIBILIYOTEKA ONLINE" hreflang="xmc" href="/xmc/wol/h/r944/lp-mhm" />
+          <link rel="alternate" type="text/html" title="प्रहरीधरहरा अनलाइन लाइब्रेरी" hreflang="mai" href="/mai/wol/h/r943/lp-mhl" />
+          <link rel="alternate" type="text/html" title="Watchtower KANONʼWARÁ꞉KE TSI IEWENNAHNOTÁHKWA" hreflang="moh" href="/moh/wol/h/r942/lp-mhk" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARY" hreflang="hil" href="/hil/wol/h/r94/lp-hv" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mhi" href="/mhi/wol/h/r939/lp-mdi" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="nan-x-mdh" href="/nan-x-mdh/wol/h/r938/lp-mdh" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBRALI YA HA INTANETI " hreflang="mck" href="/mck/wol/h/r932/lp-mbd" />
+          <link rel="alternate" type="text/html" title="Watchtower KADAAD N TAAN G BE NAAN ƐNTƐRNƐT PO" hreflang="mfq" href="/mfq/wol/h/r931/lp-mba" />
+          <link rel="alternate" type="text/html" title="የመጠበቂያ ግንብ የኢንተርኔት ቤተ መጻሕፍት" hreflang="am" href="/am/wol/h/r93/lp-am" />
+          <link rel="alternate" type="text/html" title="Watchtower YANOOʼ ICH INTERNET" hreflang="mop" href="/mop/wol/h/r928/lp-map" />
+          <link rel="alternate" type="text/html" title="PUNA TUIHONO Watchtower" hreflang="mi" href="/mi/wol/h/r923/lp-ma" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="lez" href="/lez/wol/h/r922/lp-lz" />
+          <link rel="alternate" type="text/html" title="OCISELEKO CALIVULU VO INTERNET Colombangi Via Yehova" hreflang="umb" href="/umb/wol/h/r92/lp-ub" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="lwg" href="/lwg/wol/h/r919/lp-lw" />
+          <link rel="alternate" type="text/html" title="Gad-la LAYBRI ASOU INTANNÈT-LA " hreflang="acf" href="/acf/wol/h/r918/lp-luc" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEKE YA MU INTERNET" hreflang="ldi" href="/ldi/wol/h/r916/lp-lr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="tnl" href="/tnl/wol/h/r913/lp-lnk" />
+          <link rel="alternate" type="text/html" title="ETERNET djó kʉ ná Watchtower LIBRARY" hreflang="led" href="/led/wol/h/r911/lp-lnd" />
+          <link rel="alternate" type="text/html" title="Wi pem i LAIBRARI ME INTANET" hreflang="laj" href="/laj/wol/h/r910/lp-ln" />
+          <link rel="alternate" type="text/html" title="VIVLIOTEKA TA INTERNET yuʼun Watchtower" hreflang="tzo" href="/tzo/wol/h/r91/lp-tzo" />
+          <link rel="alternate" type="text/html" title="ILAYIBULALE IYA PA INTANETI" hreflang="lai" href="/lai/wol/h/r908/lp-lmb" />
+          <link rel="alternate" type="text/html" title="BIBILIOTHEKA ONLINE la Nsanja ya Namaing'anela" hreflang="llb" href="/llb/wol/h/r907/lp-llo" />
+          <link rel="alternate" type="text/html" title="BIBLIYOTEK GO DA INTERNET NI go Watchtower" hreflang="lln" href="/lln/wol/h/r905/lp-ll" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="bxk" href="/bxk/wol/h/r904/lp-lk" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBULALI YAPA INTANETI" hreflang="leh" href="/leh/wol/h/r903/lp-lj" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA KʼINTERNET" hreflang="top" href="/top/wol/h/r90/lp-tot" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="da" href="/da/wol/h/r9/lp-d" />
+          <link rel="alternate" type="text/html" title="KABATI KA BIKETELWA KA KU ENTERNETE Watchtower" hreflang="lea" href="/lea/wol/h/r898/lp-lga" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lgg" href="/lgg/wol/h/r897/lp-lg" />
+          <link rel="alternate" type="text/html" title="CHISETE CHAMIKANDA CHAHAINTERNET chaKaposhi Kakutalila" hreflang="lch" href="/lch/wol/h/r894/lp-lc" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="lbe" href="/lbe/wol/h/r890/lp-lak" />
+          <link rel="alternate" type="text/html" title="Varðturninn VEFBÓKASAFN" hreflang="is" href="/is/wol/h/r89/lp-ic" />
+          <link rel="alternate" type="text/html" title="Shaw nyi kuiˬ Taꞈ yehˬ liꞈ teh kuiˬ bawehˇ in˗teu˗neꞈ" hreflang="lhu" href="/lhu/wol/h/r889/lp-lah" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECH ONLINE Watchtower" hreflang="lld-x-lad" href="/lld-x-lad/wol/h/r888/lp-lad" />
+          <link rel="alternate" type="text/html" title="CILAMIN CYA MIKAND CYA KU ENTERNET Watchtower" hreflang="kny" href="/kny/wol/h/r887/lp-kyk" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="kwd" href="/kwd/wol/h/r883/lp-kwa" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="kwf" href="/kwf/wol/h/r882/lp-kw" />
+          <link rel="alternate" type="text/html" title="I-Watchtower ONLINE LIBRARY" hreflang="ss" href="/ss/wol/h/r88/lp-swi" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="kus" href="/kus/wol/h/r879/lp-kus" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="kuj" href="/kuj/wol/h/r878/lp-kur" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="xsm" href="/xsm/wol/h/r873/lp-ksm" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA INTERNETOWA Strażnicy" hreflang="csb" href="/csb/wol/h/r872/lp-ksh" />
+          <link rel="alternate" type="text/html" title="Күзәтү манарасының ОНЛАЙН-КИТАПХАНӘСЕ" hreflang="tt-x-kry" href="/tt-x-kry/wol/h/r871/lp-kry" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE NA NDÖ TI INTERNET Watchtower" hreflang="sg" href="/sg/wol/h/r87/lp-sg" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="kaa" href="/kaa/wol/h/r869/lp-krk" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="hy-x-krb" href="/hy-x-krb/wol/h/r867/lp-krb" />
+          <link rel="alternate" type="text/html" title="워치타워 온라인 라이브러리" hreflang="ko-cn" href="/ko-cn/wol/h/r862/lp-koc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE A LIBRARIA" hreflang="kne" href="/kne/wol/h/r861/lp-kny" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="krj" href="/krj/wol/h/r860/lp-knr" />
+          <link rel="alternate" type="text/html" title="IBULUNGELO-THUNGELELWANO LesiThala" hreflang="nr" href="/nr/wol/h/r86/lp-nbl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="en" href="/en/wol/h/r858/lp-knm" />
+          <link rel="alternate" type="text/html" title="ವಾಚ್‌ಟವರ್ ಆನ್‌ಲೈನ್ ಲೈಬ್ರರಿ" hreflang="knn" href="/knn/wol/h/r855/lp-kn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARYA" hreflang="kyk" href="/kyk/wol/h/r854/lp-kmy" />
+          <link rel="alternate" type="text/html" title="Watchtower LABURARE NA INTANE" hreflang="hig" href="/hig/wol/h/r853/lp-kmw" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="koi" href="/koi/wol/h/r852/lp-kmp" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="kum" href="/kum/wol/h/r850/lp-kmk" />
+          <link rel="alternate" type="text/html" title="LIBRERIJA ONLAJN tat-Torri tal-Għassa" hreflang="mt" href="/mt/wol/h/r85/lp-mt" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="xbr" href="/xbr/wol/h/r849/lp-kmb" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="kpv" href="/kpv/wol/h/r848/lp-km" />
+          <link rel="alternate" type="text/html" title="DULA LEDZIWALO LIMUINTHANETHI leWatchtower" hreflang="kck-x-klz" href="/kck-x-klz/wol/h/r847/lp-klz" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="xal" href="/xal/wol/h/r845/lp-klk" />
+          <link rel="alternate" type="text/html" title="Sanja ya Namaing'anela LAIBULALE YA VA INTERNETI" hreflang="kzn" href="/kzn/wol/h/r840/lp-kkl" />
+          <link rel="alternate" type="text/html" title="Watchtower LAYIBURARI YA LE KA WEB SITE" hreflang="ts" href="/ts/wol/h/r84/lp-ts" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nyy-x-kk" href="/nyy-x-kk/wol/h/r838/lp-kk" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="kln" href="/kln/wol/h/r837/lp-kj" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEK Watchtower NA INTERNET" hreflang="ktu-x-kit" href="/ktu-x-kit/wol/h/r836/lp-kit" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLOTEKI YA INTERNET" hreflang="ktu-x-kgl" href="/ktu-x-kgl/wol/h/r832/lp-kgl" />
+          <link rel="alternate" type="text/html" title="Torre de Vigia VẼNH RÁ VINVEN FÃ ON-LINE" hreflang="kgp" href="/kgp/wol/h/r831/lp-kgg" />
+          <link rel="alternate" type="text/html" title="LAIPELI Taua Le‘o ‘I HE ‘INITANETÍ" hreflang="to" href="/to/wol/h/r83/lp-to" />
+          <link rel="alternate" type="text/html" title="ХъумакІуэ чэщанэм и ОНЛАЙН-БИБЛИОТЕКЭ" hreflang="kbd" href="/kbd/wol/h/r825/lp-kbr" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN DALAM TALIAN Watchtower" hreflang="kzj" href="/kzj/wol/h/r823/lp-kaz" />
+          <link rel="alternate" type="text/html" title="Wastaua
+INTENET LAIBRERI" hreflang="whg" href="/whg/wol/h/r820/lp-jwk" />
+          <link rel="alternate" type="text/html" title="ICEGERANYO C'IBITABU CO KURI INTERNET ca Watchtower" hreflang="run" href="/run/wol/h/r82/lp-ru" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="pga" href="/pga/wol/h/r819/lp-ju" />
+          <link rel="alternate" type="text/html" title="Wachtowa LAIBRI PANLAIN" hreflang="jam-x-jcr" href="/jam-x-jcr/wol/h/r817/lp-jcr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ivv" href="/ivv/wol/h/r813/lp-iv" />
+          <link rel="alternate" type="text/html" title="Watchtower QARASAUJAKKUT UQALIMAAGAQARVIK" hreflang="iu-Latn" href="/iu-Latn/wol/h/r812/lp-iur" />
+          <link rel="alternate" type="text/html" title="Watchtower ᖃᕋᓴᐅᔭᒃᑯᑦ ᐅᖃᓕᒫᕐᕕᒃ" hreflang="iu" href="/iu/wol/h/r811/lp-iu" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="itv" href="/itv/wol/h/r810/lp-itw" />
+          <link rel="alternate" type="text/html" title="Gözətçi qülləsinin ONLAYN KİTABXANASI" hreflang="az" href="/az/wol/h/r81/lp-ajr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="its" href="/its/wol/h/r809/lp-it" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARY" hreflang="akl" href="/akl/wol/h/r804/lp-ikn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ijc" href="/ijc/wol/h/r803/lp-ij" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="guz" href="/guz/wol/h/r802/lp-ii" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ifk" href="/ifk/wol/h/r800/lp-if" />
+          <link rel="alternate" type="text/html" title="LLAPAN LEYINA KAQ Watchtower" hreflang="que" href="/que/wol/h/r80/lp-qun" />
+          <link rel="alternate" type="text/html" title="워치타워 온라인 라이브러리" hreflang="ko" href="/ko/wol/h/r8/lp-ko" />
+          <link rel="alternate" type="text/html" title="Watchtower ELAIBURARE LOKA OLAGO" hreflang="teo" href="/teo/wol/h/r799/lp-ie" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ibl" href="/ibl/wol/h/r798/lp-ibl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="hay" href="/hay/wol/h/r796/lp-hy" />
+          <link rel="alternate" type="text/html" title="Da Watchtower LIBRARY ONLINE" hreflang="hwc" href="/hwc/wol/h/r794/lp-hwp" />
+          <link rel="alternate" type="text/html" title="EBIBLIYOTEKE Y'OKU ENTERNETE ya W" hreflang="hav" href="/hav/wol/h/r792/lp-hvu" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="huv" href="/huv/wol/h/r791/lp-huv" />
+          <link rel="alternate" type="text/html" title="ਵਾਚਟਾਵਰ ਆਨ-ਲਾਈਨ ਲਾਇਬ੍ਰੇਰੀ" hreflang="pa" href="/pa/wol/h/r79/lp-pj" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA TI INTERNET Watchtower" hreflang="hus-x-hsv" href="/hus-x-hsv/wol/h/r788/lp-hsv" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="bgc" href="/bgc/wol/h/r787/lp-hrv" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="aji" href="/aji/wol/h/r786/lp-ho" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lml" href="/lml/wol/h/r785/lp-hno" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="hla" href="/hla/wol/h/r784/lp-hla" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="hak-ID" href="/hak-ID/wol/h/r783/lp-hki" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="heh" href="/heh/wol/h/r782/lp-hh" />
+          <link rel="alternate" type="text/html" title="ONLAYN-BİBLİOTEKA Siiretmäk kuläsinin" hreflang="gag-x-gzr" href="/gag-x-gzr/wol/h/r780/lp-gzr" />
+          <link rel="alternate" type="text/html" title="Watchtower LUB VEJ XAIJ TSHAWB NRHIAV VAJLUGKUB" hreflang="hmn" href="/hmn/wol/h/r78/lp-hm" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сииретмӓк кулӓсинин" hreflang="gag-x-gz" href="/gag-x-gz/wol/h/r779/lp-gz" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="nyf" href="/nyf/wol/h/r778/lp-gy" />
+          <link rel="alternate" type="text/html" title="HƐƁƐƓAA LAAKƐI GWƐLI YƐLI ƁA Taa maakpɛmun" hreflang="gkp" href="/gkp/wol/h/r777/lp-grz" />
+          <link rel="alternate" type="text/html" title="watchtower TILA LINGIMA KAANU" hreflang="gux" href="/gux/wol/h/r774/lp-grc" />
+          <link rel="alternate" type="text/html" title="WESẸDOTẸN INTẸNẸT JI TỌN Watchtower Tọn" hreflang="guw-bj" href="/guw-bj/wol/h/r770/lp-gnb" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-КИТОБХОНАИ Бурҷи дидбонӣ" hreflang="tg" href="/tg/wol/h/r77/lp-tj" />
+          <link rel="alternate" type="text/html" title="Watchtower PEBAJ̈UTOJAWANÜ INTERNET-JAWATA" hreflang="guh" href="/guh/wol/h/r761/lp-ghb" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="gog" href="/gog/wol/h/r760/lp-gg" />
+          <link rel="alternate" type="text/html" title="کتابخانهٔ آنلاین نشریات شاهدان یَهُوَه" hreflang="fa" href="/fa/wol/h/r76/lp-pr" />
+          <link rel="alternate" type="text/html" title="Watchtower LEABHARLANN AIR LOIDHNE " hreflang="gd" href="/gd/wol/h/r759/lp-gcs" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE HA ZU INTERNET Watchtower" hreflang="gba" href="/gba/wol/h/r756/lp-gba" />
+          <link rel="alternate" type="text/html" title="ওয়াচটাওয়ার অনলাইন লাইব্রেরি" hreflang="grt-x-gar" href="/grt-x-gar/wol/h/r755/lp-gar" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEKA ONLINE" hreflang="ddg" href="/ddg/wol/h/r752/lp-ftl" />
+          <link rel="alternate" type="text/html" title="Watchtower TANAKIʼAGA TOHI ʼI TE NETI" hreflang="fud" href="/fud/wol/h/r750/lp-ft" />
+          <link rel="alternate" type="text/html" title="Wastaua INTENET LAIBRERI" hreflang="tpi" href="/tpi/wol/h/r75/lp-mp" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="fuv" href="/fuv/wol/h/r747/lp-fln" />
+          <link rel="alternate" type="text/html" title="ThlirnakInnsang ONLINE CABU HMUN" hreflang="cfm" href="/cfm/wol/h/r746/lp-flm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sgn-FJ" href="/sgn-FJ/wol/h/r745/lp-fjs" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="myv" href="/myv/wol/h/r741/lp-ez" />
+          <link rel="alternate" type="text/html" title="Watchtower ME A SAFE KE NDEFNA NA INTERNET " hreflang="srr" href="/srr/wol/h/r740/lp-er" />
+          <link rel="alternate" type="text/html" title="Gima Kohorona INTANET LAIBRI" hreflang="ho" href="/ho/wol/h/r74/lp-mo" />
+          <link rel="alternate" type="text/html" title="Watchtower KARTARÃ INTERNEƊE DUANUU" hreflang="cmi" href="/cmi/wol/h/r738/lp-emc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lir" href="/lir/wol/h/r737/lp-eli" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="etu" href="/etu/wol/h/r736/lp-ejh" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="erk" href="/erk/wol/h/r734/lp-efs" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="llp" href="/llp/wol/h/r733/lp-efn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="igb" href="/igb/wol/h/r731/lp-eba" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="enq" href="/enq/wol/h/r730/lp-ea" />
+          <link rel="alternate" type="text/html" title="વૉચટાવર ઓનલાઇન લાઇબ્રેરી" hreflang="gu" href="/gu/wol/h/r73/lp-gu" />
+          <link rel="alternate" type="text/html" title="SIFALANA SA FA INTANETI sa Watchtower" hreflang="loz" href="/loz/wol/h/r72/lp-sk" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="dar" href="/dar/wol/h/r719/lp-drg" />
+          <link rel="alternate" type="text/html" title="Watchtower SÍLIIBAR DI SÍWIDEO SAMMI DI INTERNET" hreflang="dyo" href="/dyo/wol/h/r718/lp-do" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="din" href="/din/wol/h/r713/lp-di" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE ᐊᔭᒥᐦᒋᑫᐃᐧᑲᒥᐠ" hreflang="crk-x-cys" href="/crk-x-cys/wol/h/r710/lp-cys" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEKA ONLINE" hreflang="tdt" href="/tdt/wol/h/r71/lp-ttp" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="cho" href="/cho/wol/h/r709/lp-ctw" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="crt" href="/crt/wol/h/r707/lp-cti" />
+          <link rel="alternate" type="text/html" title="守望台线上书库" hreflang="cmn-x-csn" href="/cmn-x-csn/wol/h/r705/lp-csn" />
+          <link rel="alternate" type="text/html" title="BIBLIUTECA IN LIGNA Watchtower" hreflang="co" href="/co/wol/h/r704/lp-csc" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sgn-cf" href="/sgn-cf/wol/h/r701/lp-crs" />
+          <link rel="alternate" type="text/html" title="LAIBBULALI YAA INTANETI ya Watchower" hreflang="toi" href="/toi/wol/h/r70/lp-cg" />
+          <link rel="alternate" type="text/html" title="ものみの塔 オンライン・ライブラリー" hreflang="ja" href="/ja/wol/h/r7/lp-j" />
+          <link rel="alternate" type="text/html" title="YAKBʼÄL WUJ PA INTERNET Watchtower" hreflang="cak-x-cqc" href="/cak-x-cqc/wol/h/r696/lp-cqc" />
+          <link rel="alternate" type="text/html" title="Watchtower INTERNETSHA PILLA TSUNUNU" hreflang="cbi" href="/cbi/wol/h/r695/lp-cpl" />
+          <link rel="alternate" type="text/html" title="Watchtower
+LAYIBULALI YAHAINTANETI" hreflang="lun" href="/lun/wol/h/r69/lp-ld" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="cfg" href="/cfg/wol/h/r686/lp-cmk" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="chd" href="/chd/wol/h/r683/lp-clx" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="chr" href="/chr/wol/h/r682/lp-cke" />
+          <link rel="alternate" type="text/html" title="守望台線上書庫" hreflang="nan-x-chw" href="/nan-x-chw/wol/h/r681/lp-chw" />
+          <link rel="alternate" type="text/html" title="BUTALA BWA MABUKU BWA PA INTANETI" hreflang="kqn" href="/kqn/wol/h/r68/lp-kd" />
+          <link rel="alternate" type="text/html" title="守望台线上书库" hreflang="nan-x-chn" href="/nan-x-chn/wol/h/r677/lp-chn" />
+          <link rel="alternate" type="text/html" title="守望台线上书库" hreflang="wuu-x-chg" href="/wuu-x-chg/wol/h/r673/lp-chg" />
+          <link rel="alternate" type="text/html" title="CHISETE CHAMIKANDA CHAHAINTERNET chaKaposhi Kakutalila" hreflang="lue" href="/lue/wol/h/r67/lp-lv" />
+          <link rel="alternate" type="text/html" title="ISHOMERO RY'AHARI INTANETI rya Watchtower" hreflang="cgg" href="/cgg/wol/h/r668/lp-cgg" />
+          <link rel="alternate" type="text/html" title="Watchtower LAYIBURARI YA LE KA WEB SITE" hreflang="tso-ZW" href="/tso-ZW/wol/h/r667/lp-cga" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="cbk" href="/cbk/wol/h/r661/lp-cc" />
+          <link rel="alternate" type="text/html" title="Watchtower PAPERA INTERNÉI KƗE" hreflang="cub" href="/cub/wol/h/r660/lp-cbe" />
+          <link rel="alternate" type="text/html" title="LAIBULALI YA PA INTANETI ya Watchtower" hreflang="nya" href="/nya/wol/h/r66/lp-cin" />
+          <link rel="alternate" type="text/html" title="ÄYËKJUÄ JUÍ INTERNET SKA Watchtower" hreflang="cjp" href="/cjp/wol/h/r659/lp-cab" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="bwr" href="/bwr/wol/h/r657/lp-bur" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="bom" href="/bom/wol/h/r651/lp-brm" />
+          <link rel="alternate" type="text/html" title="BÍBLIOTECA ÍNTERNET KI̱ Watchtower" hreflang="bzd" href="/bzd/wol/h/r650/lp-bri" />
+          <link rel="alternate" type="text/html" title="LAIBLALI YA PA INTANETI IYA Watchtower" hreflang="lam" href="/lam/wol/h/r65/lp-ab" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="bwi" href="/bwi/wol/h/r649/lp-bnw" />
+          <link rel="alternate" type="text/html" title=" Watchtower MSÙMBÉCO WA BITABO Ù ENTELENETE" hreflang="bmb" href="/bmb/wol/h/r644/lp-bmb" />
+          <link rel="alternate" type="text/html" title="Watchtowerjeva SPLETNA KNJIŽNICA" hreflang="sl" href="/sl/wol/h/r64/lp-sv" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="bho" href="/bho/wol/h/r639/lp-bhj" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="bfa" href="/bfa/wol/h/r638/lp-bh" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="be" href="/be/wol/h/r635/lp-bel" />
+          <link rel="alternate" type="text/html" title="Őrtorony ONLINE KÖNYVTÁR" hreflang="ron-x-bea" href="/ron-x-bea/wol/h/r634/lp-bea" />
+          <link rel="alternate" type="text/html" title="vaatchtavar aanlain laibrari" hreflang="ta-x-tlr" href="/ta-x-tlr/wol/h/r1188/lp-tlr" />
+          <link rel="alternate" type="text/html" title="ONLINE LAIBRI wa watchtower" hreflang="yaz" href="/yaz/wol/h/r1334/lp-lka" />
+          <link rel="alternate" type="text/html" title="உவாட்ச்டவர் ஆன்லைன் லைப்ரரி" hreflang="bfq" href="/bfq/wol/h/r632/lp-bdg" />
+          <link rel="alternate" type="text/html" title="WESẸDOTẸN INTẸNẸT JI TỌN Watchtower Tọn" hreflang="guw" href="/guw/wol/h/r63/lp-eg" />
+          <link rel="alternate" type="text/html" title="Watchtowern TIRE GBABURU INTƐƐNƐTI SƆƆ" hreflang="bba" href="/bba/wol/h/r628/lp-bb" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="bxa" href="/bxa/wol/h/r627/lp-bau" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="nfl" href="/nfl/wol/h/r625/lp-ayw" />
+          <link rel="alternate" type="text/html" title="TÉERE YI AM CI SUÑU PALAAS CI INTERNET" hreflang="wo" href="/wo/wol/h/r1240/lp-wo" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="any-CI" href="/any-CI/wol/h/r623/lp-ayi" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="av" href="/av/wol/h/r621/lp-av" />
+          <link rel="alternate" type="text/html" title="INTERNETPI QELQANCHISKUNA Watchtower" hreflang="quz" href="/quz/wol/h/r62/lp-qu" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="abn" href="/abn/wol/h/r619/lp-au" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="aia" href="/aia/wol/h/r613/lp-aro" />
+          <link rel="alternate" type="text/html" title="SANDUK MAKƏTUBƏ Watchtower" hreflang="mwm" href="/mwm/wol/h/r1128/lp-sar" />
+          <link rel="alternate" type="text/html" title="KONA KIMI PUKA o te Watchtower " hreflang="rap" href="/rap/wol/h/r1121/lp-rpn" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBILIYOTƐKI INTƐRINƐTI KAN" hreflang="bm" href="/bm/wol/h/r612/lp-ar" />
+          <link rel="alternate" type="text/html" title="Watchtower BUT EZGODE TE SIKO ONLINE" hreflang="rmy-CL" href="/rmy-CL/wol/h/r1111/lp-rmh" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="app" href="/app/wol/h/r611/lp-apm" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBRARE YA PA INTANETI" hreflang="bem" href="/bem/wol/h/r61/lp-cw" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="mqj" href="/mqj/wol/h/r609/lp-ama" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="alq" href="/alq/wol/h/r608/lp-alq" />
+          <link rel="alternate" type="text/html" title="Watchtower BILLQUE PAPIL INTERNET MU" hreflang="arn-x-phn" href="/arn-x-phn/wol/h/r1071/lp-phn" />
+          <link rel="alternate" type="text/html" title="Loꞈ˗eu nymˇgoˇ Awˆlai Sahˬ boꞈ taˬ duˬ" hreflang="ahk" href="/ahk/wol/h/r604/lp-aka" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nsi" href="/nsi/wol/h/r1036/lp-nns" />
+          <link rel="alternate" type="text/html" title="SANKENARENTSIPEE INTERINEKI Watchtower" hreflang="cni" href="/cni/wol/h/r601/lp-ahk" />
+          <link rel="alternate" type="text/html" title="Apajuí chichame INTERNETNUM PAPÍ AIDAU" hreflang="agr" href="/agr/wol/h/r600/lp-agr" />
+          <link rel="alternate" type="text/html" title="BIBLIYOTÈK SOU ENTÈNÈT Watchtower" hreflang="ht" href="/ht/wol/h/r60/lp-cr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE Watchtower" hreflang="it" href="/it/wol/h/r6/lp-i" />
+          <link rel="alternate" type="text/html" title="مكتبة برج المراقبة الإلكترونية" hreflang="arz" href="/arz/wol/h/r598/lp-aey" />
+          <link rel="alternate" type="text/html" title="مكتبة برج المراقبة الالكترونية" hreflang="arq" href="/arq/wol/h/r597/lp-adz" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="adh" href="/adh/wol/h/r595/lp-adh" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="abx" href="/abx/wol/h/r592/lp-abn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="omb" href="/omb/wol/h/r590/lp-abe" />
+          <link rel="alternate" type="text/html" title="LLYFRGELL AR-LEIN y Tŵr Gwylio" hreflang="cy" href="/cy/wol/h/r59/lp-w" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="igl" href="/igl/wol/h/r589/lp-aa" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NGAI INTERNET Watchtower" hreflang="pls" href="/pls/wol/h/r588/lp-ngm" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="nzb" href="/nzb/wol/h/r587/lp-njb" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN DALAM TALIAN Watchtower" hreflang="sdo" href="/sdo/wol/h/r586/lp-bdy" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lnu" href="/lnu/wol/h/r585/lp-lgd" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKI AN INTERNET Watchtower" hreflang="buc" href="/buc/wol/h/r584/lp-bsh" />
+          <link rel="alternate" type="text/html" title="БИБЛИОТЕКА АНДО ИНТЭРНЭТО Сторожевая Башня" hreflang="rmy-x-rmk" href="/rmy-x-rmk/wol/h/r583/lp-rmk" />
+          <link rel="alternate" type="text/html" title="THƯ VIỆN TRỰC TUYẾN Tháp Canh" hreflang="hab" href="/hab/wol/h/r582/lp-slv" />
+          <link rel="alternate" type="text/html" title="ƉÚÚ-KƆ̃ DYÍ-GMƆ̀ÌN-GBÒ-CÈÈ-ÐƐ̀-DYI-DÈÌN-NAÍN" hreflang="bsq" href="/bsq/wol/h/r581/lp-ba" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="haw" href="/haw/wol/h/r580/lp-hw" />
+          <link rel="alternate" type="text/html" title="Watchtower INTERNETANKIR BIBLIOTECA" hreflang="ay" href="/ay/wol/h/r58/lp-ap" />
+          <link rel="alternate" type="text/html" title="کتابخانهٔ آنلاین نشریات شاهدان یَهُوَه" hreflang="prs" href="/prs/wol/h/r579/lp-dar" />
+          <link rel="alternate" type="text/html" title="Watchtower KARETAKON TA WÒTUPICHOPO INTANET TA" hreflang="car-x-crb" href="/car-x-crb/wol/h/r578/lp-crb" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mbm" href="/mbm/wol/h/r577/lp-omb" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA LÍNEA DAU Watchtower" hreflang="aoc" href="/aoc/wol/h/r576/lp-pmn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NI NUʼ LO INTERNET Watchtower" hreflang="zab" href="/zab/wol/h/r575/lp-zpd" />
+          <link rel="alternate" type="text/html" title="المكتبة الالكترونية متاع برج المراقبة" hreflang="aeb" href="/aeb/wol/h/r574/lp-atn" />
+          <link rel="alternate" type="text/html" title="GU BA AWARAGA DU ROGO INTERNET nga ga Ngbaõbambu Sinziri" hreflang="zne" href="/zne/wol/h/r573/lp-zn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="meu" href="/meu/wol/h/r572/lp-mtu" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ann" href="/ann/wol/h/r571/lp-obl" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="ce" href="/ce/wol/h/r570/lp-he" />
+          <link rel="alternate" type="text/html" title="INTERNETPI QILLQAKUNA Watchtower" hreflang="quy" href="/quy/wol/h/r57/lp-qua" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="krc" href="/krc/wol/h/r569/lp-bal" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="yrk" href="/yrk/wol/h/r568/lp-nnt" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="yrk-x-nnf" href="/yrk-x-nnf/wol/h/r567/lp-nnf" />
+          <link rel="alternate" type="text/html" title="Watchtower INTERNETNÄ CUYÄRU OʼTÄ KU̧NÄ̧HUO̧MȨ" hreflang="pid" href="/pid/wol/h/r566/lp-pra" />
+          <link rel="alternate" type="text/html" title="BHIBLIYOTEKA NYA SAYITI ya Torre de Vigia" hreflang="toh" href="/toh/wol/h/r565/lp-gtn" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН БИБЛИОТЕКА „Стражева кула“" hreflang="bqn" href="/bqn/wol/h/r564/lp-bls" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="rml-RU" href="/rml-RU/wol/h/r563/lp-rmp" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="wba" href="/wba/wol/h/r562/lp-wro" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="chj" href="/chj/wol/h/r561/lp-cno" />
+          <link rel="alternate" type="text/html" title="كۇزەت مۇناراسىنىڭ تورداعى كىتاپحاناسى" hreflang="kk-Arab" href="/kk-Arab/wol/h/r560/lp-aza" />
+          <link rel="alternate" type="text/html" title="प्रहरीधरहरा अनलाइन लाइब्रेरी " hreflang="ne" href="/ne/wol/h/r56/lp-np" />
+          <link rel="alternate" type="text/html" title="ৱাটচতাৱর ওনলাইন লাইব্রেরী" hreflang="mni" href="/mni/wol/h/r559/lp-mi" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mni-Latn" href="/mni-Latn/wol/h/r558/lp-mir" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="kha" href="/kha/wol/h/r557/lp-ks" />
+          <link rel="alternate" type="text/html" title="Watchtower INTANƐT SO NWOMAA AKORAEƐ" hreflang="sfw" href="/sfw/wol/h/r556/lp-shw" />
+          <link rel="alternate" type="text/html" title="Lomiga Faale-Tusi Paia I LE INITANETI" hreflang="sgn-WS" href="/sgn-WS/wol/h/r555/lp-sms" />
+          <link rel="alternate" type="text/html" title="Watchtower INTANƐT ZU GAMA BINZIE" hreflang="dga" href="/dga/wol/h/r547/lp-dga" />
+          <link rel="alternate" type="text/html" title="Харабыл башнятын ОНЛАЙН-БИБЛИОТЕКАТА" hreflang="sah" href="/sah/wol/h/r554/lp-yk" />
+          <link rel="alternate" type="text/html" title="Орол башньын ОНЛАЙН-БИБЛИОТЕКЕ" hreflang="mhr" href="/mhr/wol/h/r553/lp-mar" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="crh-x-ctc" href="/crh-x-ctc/wol/h/r552/lp-ctc" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="bxr" href="/bxr/wol/h/r551/lp-by" />
+          <link rel="alternate" type="text/html" title="Watchtower tɛ INTƐRNƐƐTƖ YƆƆ TAKAYƖSƖ ƉƖZƖYƐ" hreflang="kbp" href="/kbp/wol/h/r508/lp-kab" />
+          <link rel="alternate" type="text/html" title="Watchtower
+RUK'OLIB'AAL WUUJ CHPAAM INTERNET" hreflang="tzj" href="/tzj/wol/h/r550/lp-tzu" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNIA Watchtower" hreflang="cat" href="/cat/wol/h/r55/lp-an" />
+          <link rel="alternate" type="text/html" title="ଓ୍ଵାଚଟାଓ୍ଵର ଅନଲାଇନ୍ ଲାଇବ୍ରେରୀ" hreflang="or" href="/or/wol/h/r497/lp-oi" />
+          <link rel="alternate" type="text/html" title="Watchtower – BIBLIOTECA ONLINE" hreflang="rmy" href="/rmy/wol/h/r493/lp-rmr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="gse" href="/gse/wol/h/r492/lp-ghs" />
+          <link rel="alternate" type="text/html" title="د کتونکی برج انټرنېټي کتابتون" hreflang="ps" href="/ps/wol/h/r549/lp-ph" />
+          <link rel="alternate" type="text/html" title="Watchtower INTANƐTƖ ZƲ AWUUKUZIYELƐDƖKA" hreflang="aha" href="/aha/wol/h/r481/lp-ahn" />
+          <link rel="alternate" type="text/html" title="Tiŋguligooni INTANƐT ZUƔU NEMA VAABU" hreflang="dag" href="/dag/wol/h/r548/lp-dgb" />
+          <link rel="alternate" type="text/html" title="Харуулын цамхаг ОНЛАЙН НОМЫН САН" hreflang="msr" href="/msr/wol/h/r546/lp-msr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTÉKA NA INTERNET di Tori di Vijia" hreflang="kea" href="/kea/wol/h/r455/lp-kbv" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA NA INTERNET di Watchtower " hreflang="pov" href="/pov/wol/h/r451/lp-tcr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA LINEA YANA Watchtower " hreflang="yup" href="/yup/wol/h/r545/lp-ykp" />
+          <link rel="alternate" type="text/html" title="Pigera Zontua INTANƐT TUUMA ZƐ'AN GƆNƆ ZAALEŊA" hreflang="gur" href="/gur/wol/h/r447/lp-ff" />
+          <link rel="alternate" type="text/html" title="Watchtower – BIBLIOTECĂ ONLINE" hreflang="rms" href="/rms/wol/h/r445/lp-lmg" />
+          <link rel="alternate" type="text/html" title="ƐNTƐNƐTI JI WEMADADOXU Watchtower Tɔ" hreflang="ajg" href="/ajg/wol/h/r544/lp-ajg" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="hds" href="/hds/wol/h/r434/lp-sho" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBURARI I MU INTERNET" hreflang="kck-x-kl" href="/kck-x-kl/wol/h/r543/lp-kl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="wes-x-pgw" href="/wes-x-pgw/wol/h/r429/lp-pgw" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="rsl" href="/rsl/wol/h/r422/lp-rsl" />
+          <link rel="alternate" type="text/html" title="Wachtturm ONLINE-BIBLIOTHEK " hreflang="gsg" href="/gsg/wol/h/r420/lp-dgs" />
+          <link rel="alternate" type="text/html" title="Vennak Innsang ONLINE LIBRARY" hreflang="cnh" href="/cnh/wol/h/r542/lp-hk" />
+          <link rel="alternate" type="text/html" title="FITEHIRIZAM-BOKIN’NY Vavolombelon'i Jehovah" hreflang="mzc" href="/mzc/wol/h/r416/lp-ttm" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKI HA INTERNET Watchtower" hreflang="swb-x-orr" href="/swb-x-orr/wol/h/r541/lp-orr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="psp" href="/psp/wol/h/r404/lp-fsl" />
+          <link rel="alternate" type="text/html" title="ONLINE KNIHOVNA Strážné věže" hreflang="cse" href="/cse/wol/h/r401/lp-cse" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="bkh" href="/bkh/wol/h/r540/lp-bkk" />
+          <link rel="alternate" type="text/html" title="ОНЛАЈН БИБЛИОТЕКА Watchtower" hreflang="sr-Cyrl" href="/sr-Cyrl/wol/h/r54/lp-sb" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="bfi" href="/bfi/wol/h/r399/lp-bsl" />
+          <link rel="alternate" type="text/html" title="워치타워 온라인 라이브러리" hreflang="kvk" href="/kvk/wol/h/r391/lp-ksl" />
+          <link rel="alternate" type="text/html" title="Sin Langchyi ONLINE LAIKA DUM" hreflang="kac" href="/kac/wol/h/r539/lp-ah" />
+          <link rel="alternate" type="text/html" title="INTERNETOVÁ KNIŽNICA Strážnej veže" hreflang="svk" href="/svk/wol/h/r389/lp-vsl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="aed" href="/aed/wol/h/r386/lp-lsa" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="prl" href="/prl/wol/h/r380/lp-spe" />
+          <link rel="alternate" type="text/html" title="Watchtower EKIBIKIRO KY'EBITABU EKIRI OKO ENTERNETE" hreflang="nnb" href="/nnb/wol/h/r538/lp-kin" />
+          <link rel="alternate" type="text/html" title="LAEBRARI E INTHANETENG" hreflang="st-ZA" href="/st-ZA/wol/h/r374/lp-ssa" />
+          <link rel="alternate" type="text/html" title="ONLINE KŇIŽŇICA - E Stražno veža" hreflang="rmc-sk" href="/rmc-sk/wol/h/r370/lp-rms" />
+          <link rel="alternate" type="text/html" title="Vilnatausang ONLINE LAIBUSAAL" hreflang="ctd" href="/ctd/wol/h/r537/lp-ci" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="ecs" href="/ecs/wol/h/r367/lp-sec" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="ady" href="/ady/wol/h/r536/lp-ad" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="sr-Latn" href="/sr-Latn/wol/h/r353/lp-sbo" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA YIN INTERNET" hreflang="kjb" href="/kjb/wol/h/r535/lp-qnj" />
+          <link rel="alternate" type="text/html" title="守望台线上书库" hreflang="yue-Hans" href="/yue-Hans/wol/h/r348/lp-cns" />
+          <link rel="alternate" type="text/html" title="BIBLIYOTEKA KA INTERNETI la Watchtower" hreflang="tso-MZ" href="/tso-MZ/wol/h/r534/lp-cgm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ibg" href="/ibg/wol/h/r336/lp-ig" />
+          <link rel="alternate" type="text/html" title="Wachtturm ONLINE-BIBLIOTHÉIK" hreflang="lb" href="/lb/wol/h/r533/lp-lx" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="ewo" href="/ewo/wol/h/r325/lp-ewn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA LOH INTERNET Watchtower" hreflang="zpf" href="/zpf/wol/h/r532/lp-zpt" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBRARI ỌRẸ ITANẸTI" hreflang="oke" href="/oke/wol/h/r314/lp-okp" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="bbj" href="/bbj/wol/h/r313/lp-ghm" />
+          <link rel="alternate" type="text/html" title="Watchtower AZA-EBE NỌN RIBHI INTANẸT" hreflang="ish" href="/ish/wol/h/r312/lp-ih" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE L̦ÃIBRÃRE" hreflang="mh" href="/mh/wol/h/r311/lp-mh" />
+          <link rel="alternate" type="text/html" title="پەڕتووکخانەی سەرھێڵی شاھیدانی یەھوە" hreflang="ckb" href="/ckb/wol/h/r531/lp-rda" />
+          <link rel="alternate" type="text/html" title="ẸGA KÁ APWỤ ỊHYẸ KAA JI I-INTANẸTỊ nya ị-Watchtower" hreflang="ige" href="/ige/wol/h/r309/lp-ige" />
+          <link rel="alternate" type="text/html" title="ANGUN YA NDEN Watchtower" hreflang="fan" href="/fan/wol/h/r308/lp-fgn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="idu" href="/idu/wol/h/r302/lp-id" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="gkn" href="/gkn/wol/h/r301/lp-gn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA ONLINE Watchtower" hreflang="rmy-AL" href="/rmy-AL/wol/h/r530/lp-rml" />
+          <link rel="alternate" type="text/html" title="INTERNETPI BIBLIOTECA Watchtower" hreflang="qu" href="/qu/wol/h/r53/lp-qub" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE da Torre de Vigia" hreflang="pt-PT" href="/pt-PT/wol/h/r296/lp-tpo" />
+          <link rel="alternate" type="text/html" title="ILAIBRI RỌHẸ INTANẸTI " hreflang="urh" href="/urh/wol/h/r295/lp-ur" />
+          <link rel="alternate" type="text/html" title="AZA EBE ỌGHE Watchtower NỌ RRE INTANẸT " hreflang="bin" href="/bin/wol/h/r292/lp-ed" />
+          <link rel="alternate" type="text/html" title="Таңныыл суургазының ОНЛАЙН-БИБЛИОТЕКАЗЫ" hreflang="tyv" href="/tyv/wol/h/r529/lp-vi" />
+          <link rel="alternate" type="text/html" title="RUNANGA PUKA I RUNGA I TE INITANETI Punanga Tiaki" hreflang="rar" href="/rar/wol/h/r528/lp-ra" />
+          <link rel="alternate" type="text/html" title="Watchtower CARTARA INTERNENE" hreflang="emp" href="/emp/wol/h/r527/lp-emp" />
+          <link rel="alternate" type="text/html" title="Դիտարանի ՕՆԼԱՅՆ ԳՐԱԴԱՐԱՆ" hreflang="aen" href="/aen/wol/h/r526/lp-ars" />
+          <link rel="alternate" type="text/html" title="Watchtower LUB VEJ XAIJ TSHAWB NRHIAV VAJLUGKUB" hreflang="hnj" href="/hnj/wol/h/r525/lp-hmn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="gom" href="/gom/wol/h/r244/lp-kt" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBURALE EYA HA MUKURA " hreflang="ttj" href="/ttj/wol/h/r524/lp-rt" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="nnh" href="/nnh/wol/h/r238/lp-nmb" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LIÑA Watchtower" hreflang="gl" href="/gl/wol/h/r231/lp-glc" />
+          <link rel="alternate" type="text/html" title="Watchtower INTERNETGI GARDAMAR NANAID" hreflang="cuk" href="/cuk/wol/h/r523/lp-un" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNIA Watchtower" hreflang="ca-x-vlc" href="/ca-x-vlc/wol/h/r226/lp-vlc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBURUTEGIA" hreflang="eu" href="/eu/wol/h/r223/lp-bq" />
+          <link rel="alternate" type="text/html" title="Watchtower LABURARE NA INTANE" hreflang="ha" href="/ha/wol/h/r220/lp-ha" />
+          <link rel="alternate" type="text/html" title="Kivenna Innsang ONLINE LIBRARY" hreflang="tcz" href="/tcz/wol/h/r522/lp-kuk" />
+          <link rel="alternate" type="text/html" title="Hwɔɔmi Mɔ INTANƐTI NƆ NITO HE" hreflang="ada" href="/ada/wol/h/r217/lp-dg" />
+          <link rel="alternate" type="text/html" title="IJIIR I Watchtower a KOSON ITYAKERADA SHA INTANET YÔ" hreflang="tiv" href="/tiv/wol/h/r216/lp-tv" />
+          <link rel="alternate" type="text/html" title="UWOU-EBE ITANẸTE Uwou-Eroro" hreflang="iso" href="/iso/wol/h/r215/lp-is" />
+          <link rel="alternate" type="text/html" title="守望台線上書庫" hreflang="yue-Hant" href="/yue-Hant/wol/h/r214/lp-chc" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEK Udia pa Kapend" hreflang="rnd" href="/rnd/wol/h/r521/lp-dr" />
+          <link rel="alternate" type="text/html" title="ৱাচটাৱাৰ অনলাইন লাইব্রেৰী " hreflang="as" href="/as/wol/h/r206/lp-ae" />
+          <link rel="alternate" type="text/html" title="FANAJARIA BOKY ahi-ty Vavolombeloni-Jehovah" hreflang="skg-x-vz" href="/skg-x-vz/wol/h/r205/lp-vz" />
+          <link rel="alternate" type="text/html" title="Watchtower INTERNET MÜLEYECHI LIFRU" hreflang="arn" href="/arn/wol/h/r203/lp-mpd" />
+          <link rel="alternate" type="text/html" title="YO XISKUAMA KJA IN SITIOGØJME-Watchtower" hreflang="maz" href="/maz/wol/h/r520/lp-mzh" />
+          <link rel="alternate" type="text/html" title="Wagtoring – AANLYN BIBLIOTEEK" hreflang="af" href="/af/wol/h/r52/lp-af" />
+          <link rel="alternate" type="text/html" title="FAGNAJARIAM-BOKE TY Vavolombelo i Jehovah" hreflang="tdx" href="/tdx/wol/h/r194/lp-tnd" />
+          <link rel="alternate" type="text/html" title="FIKAJIAN̈A BOKIN'NY Vavolombelon̈on'i Jehovah" hreflang="xmv" href="/xmv/wol/h/r190/lp-tnk" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="hyw-x-hms" href="/hyw-x-hms/wol/h/r519/lp-hms" />
+          <link rel="alternate" type="text/html" title="Njongo a Betatedi-KO̠BAT'A KALATI O MUSINGA" hreflang="dua" href="/dua/wol/h/r184/lp-da" />
+          <link rel="alternate" type="text/html" title="Watchtower KOBOT BIKAAT I INTERNET" hreflang="bas" href="/bas/wol/h/r181/lp-bs" />
+          <link rel="alternate" type="text/html" title="NDA BEKALATE watchtower ya nkol" hreflang="bum" href="/bum/wol/h/r180/lp-bo" />
+          <link rel="alternate" type="text/html" title="INTERNETPI BIBLIOTEKA Watchtower" hreflang="inb" href="/inb/wol/h/r518/lp-inb" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लायब्ररी" hreflang="mr" href="/mr/wol/h/r171/lp-mr" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBULALE YA PA INTANETI" hreflang="mwn" href="/mwn/wol/h/r517/lp-nm" />
+          <link rel="alternate" type="text/html" title="ವಾಚ್‌ಟವರ್ ಆನ್‌ಲೈನ್ ಲೈಬ್ರರಿ" hreflang="kn" href="/kn/wol/h/r167/lp-ka" />
+          <link rel="alternate" type="text/html" title="വാച്ച്ടവര്‍
+ഓണ്‍ലൈന്‍ ലൈബ്രറി" hreflang="ml" href="/ml/wol/h/r162/lp-my" />
+          <link rel="alternate" type="text/html" title="ABU̱ I ʼBU̱I YÄ HE̱ʼMI HA INTERNET Watchtower" hreflang="ots" href="/ots/wol/h/r516/lp-ots" />
+          <link rel="alternate" type="text/html" title="Харуулын цамхаг ОНЛАЙН НОМЫН САН" hreflang="mn" href="/mn/wol/h/r159/lp-kha" />
+          <link rel="alternate" type="text/html" title="Դիտարանի ՕՆԼԱՅՆ ԳՐԱԴԱՐԱՆ" hreflang="hyw-x-hma" href="/hyw-x-hma/wol/h/r515/lp-hma" />
+          <link rel="alternate" type="text/html" title="కావలికోట ఆన్‌లైన్‌ లైబ్రరీ" hreflang="te" href="/te/wol/h/r146/lp-tu" />
+          <link rel="alternate" type="text/html" title="INTERNETIKKUT ATUAGAATEQARFIK Watchtower " hreflang="kl" href="/kl/wol/h/r140/lp-gl" />
+          <link rel="alternate" type="text/html" title="THƯ VIỆN TRỰC TUYẾN Tháp Canh" hreflang="cmo" href="/cmo/wol/h/r514/lp-mnc" />
+          <link rel="alternate" type="text/html" title="ওয়াচটাওয়ার অনলাইন লাইব্রেরি" hreflang="bn" href="/bn/wol/h/r137/lp-be" />
+          <link rel="alternate" type="text/html" title="Ɛzinzalɛ Arane YINTANƐTE ZO MBULUKUZIELƐLEKA" hreflang="nzi" href="/nzi/wol/h/r130/lp-nz" />
+          <link rel="alternate" type="text/html" title="ܒܹܝܬ ـ ܐܲܪ̈ܟܹܐ ܕܒܘܼܪܓ̰ܵܐ ܕܢܛܘܿܪܬܵܐ ܥܲܢܠܵܝܢ " hreflang="aii" href="/aii/wol/h/r513/lp-as" />
+          <link rel="alternate" type="text/html" title="បណ្ណាល័យអ៊ីនធឺណិតរបស់ប៉មយាម" hreflang="km" href="/km/wol/h/r124/lp-cb" />
+          <link rel="alternate" type="text/html" title="உவாட்ச்டவர் ஆன்லைன் லைப்ரரி" hreflang="ta" href="/ta/wol/h/r122/lp-tl" />
+          <link rel="alternate" type="text/html" title="Buu-Mɔɔ INTANƐT NƆ WOJIATOOHE" hreflang="gaa" href="/gaa/wol/h/r121/lp-ga" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mgo" href="/mgo/wol/h/r512/lp-mta" />
+          <link rel="alternate" type="text/html" title="ቤተ መጻሕፍቲ ኢንተርነት ግምቢ ዘብዐኛ" hreflang="ti" href="/ti/wol/h/r119/lp-ti" />
+          <link rel="alternate" type="text/html" title="Wachtawur ONLAYN LAYBREERIYAA" hreflang="wal" href="/wal/wol/h/r117/lp-wl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE YA LIBRARYA" hreflang="pag" href="/pag/wol/h/r116/lp-pn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE A LIBRARIA" hreflang="ilo" href="/ilo/wol/h/r115/lp-il" />
+          <link rel="alternate" type="text/html" title="INTERNET DZI AGBALẼDZRAƉOƑE" hreflang="ee" href="/ee/wol/h/r114/lp-ew" />
+          <link rel="alternate" type="text/html" title="LAAYIBRARII INTARNEETIIRRAA" hreflang="om" href="/om/wol/h/r112/lp-oa" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARYA" hreflang="war" href="/war/wol/h/r110/lp-sa" />
+          <link rel="alternate" type="text/html" title="ĨHÖIWAROBO UBUMRODZÉ ON-LINE Roꞌmadöꞌöꞌwa te hã" hreflang="xav" href="/xav/wol/h/r511/lp-xv" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="hi" href="/hi/wol/h/r108/lp-hi" />
+          <link rel="alternate" type="text/html" title="Agarooshshu Shaeta INTERNEETETE LAYIBIRERE" hreflang="sid" href="/sid/wol/h/r105/lp-dm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NA LIBRARYA" hreflang="bcl" href="/bcl/wol/h/r104/lp-bi" />
+          <link rel="alternate" type="text/html" title="ОНЛАЈН БИБЛИОТЕКА Watchtower" hreflang="mk" href="/mk/wol/h/r102/lp-mc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE NGA LIBRARYA" hreflang="ceb" href="/ceb/wol/h/r101/lp-cv" />
+          <link rel="alternate" type="text/html" title="BUIKERSTUUW IN INTERNET fon Torre de Vigia" hreflang="nds" href="/nds/wol/h/r510/lp-pmr" />
+          <link rel="alternate" type="text/html" title="Күзөт мунарасынын ОНЛАЙН КИТЕПКАНАСЫ" hreflang="ky" href="/ky/wol/h/r51/lp-kz" />
+          <link rel="alternate" type="text/html" title="Watchtowerta LÍBROM INTERNETPO ÉRIARIM" hreflang="mfy" href="/mfy/wol/h/r509/lp-myo" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="crn" href="/crn/wol/h/r507/lp-cor" />
+          <link rel="alternate" type="text/html" title="Qoʻriqchi minorasining ONLAYN KUTUBXONASI" hreflang="uz-Latn" href="/uz-Latn/wol/h/r506/lp-uzr" />
+          <link rel="alternate" type="text/html" title="守望台線上書庫" hreflang="hks" href="/hks/wol/h/r505/lp-hsl" />
+          <link rel="alternate" type="text/html" title="Sargtorņa TIEŠSAISTES BIBLIOTĒKA" hreflang="lv" href="/lv/wol/h/r49/lp-lt" />
+          <link rel="alternate" type="text/html" title="THƯ VIỆN TRỰC TUYẾN Tháp Canh" hreflang="vi" href="/vi/wol/h/r47/lp-vt" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН БИБЛИОТЕКА „Стражева кула“" hreflang="bg" href="/bg/wol/h/r46/lp-bl" />
+          <link rel="alternate" type="text/html" title="Դիտարանի ՕՆԼԱՅՆ ԳՐԱԴԱՐԱՆ" hreflang="hy" href="/hy/wol/h/r44/lp-rea" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA ONLINE Watchtower" hreflang="sq" href="/sq/wol/h/r41/lp-al" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA INTERNETSÍE 
+Watchtower" hreflang="hch" href="/hch/wol/h/r504/lp-hch" />
+          <link rel="alternate" type="text/html" title="مكتبة برج المراقبة الإلكترونية" hreflang="ar" href="/ar/wol/h/r39/lp-a" />
+          <link rel="alternate" type="text/html" title="INTERNETOVÁ KNIŽNICA Strážnej veže" hreflang="sk" href="/sk/wol/h/r38/lp-v" />
+          <link rel="alternate" type="text/html" title="Vahitorni VEEBIRAAMATUKOGU" hreflang="et" href="/et/wol/h/r37/lp-st" />
+          <link rel="alternate" type="text/html" title="ÀKÁ ÌWÉ ORÍ ÍNTÁNẸ́Ẹ̀TÌ ti Watchtower" hreflang="yo" href="/yo/wol/h/r36/lp-yr" />
+          <link rel="alternate" type="text/html" title="Watchtower LIBRARY EKE INTANET" hreflang="efi" href="/efi/wol/h/r35/lp-ef" />
+          <link rel="alternate" type="text/html" title="Watchtower – BIBLIOTECĂ ONLINE" hreflang="ro" href="/ro/wol/h/r34/lp-m" />
+          <link rel="alternate" type="text/html" title="Ɔwɛn-Aban INTANƐT SO NHOMAKORABEA" hreflang="tw" href="/tw/wol/h/r33/lp-tw" />
+          <link rel="alternate" type="text/html" title="Sargybos bokšto INTERNETINĖ BIBLIOTEKA" hreflang="lt" href="/lt/wol/h/r32/lp-l" />
+          <link rel="alternate" type="text/html" title="Ọ́bá Akwụkwọ Anyị NKE DỊ N'ỊNTANET" hreflang="ig" href="/ig/wol/h/r31/lp-ib" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="fr" href="/fr/wol/h/r30/lp-f" />
+          <link rel="alternate" type="text/html" title="Torre de Vigia KAARETAKON INTERNET YA" hreflang="mbc" href="/mbc/wol/h/r503/lp-mcs" />
+          <link rel="alternate" type="text/html" title="ONLINE KNIHOVNA Strážné věže" hreflang="cs" href="/cs/wol/h/r29/lp-b" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="tl" href="/tl/wol/h/r27/lp-tg" />
+          <link rel="alternate" type="text/html" title="FITEHIRIZAM-BOKIN’NY Vavolombelon'i Jehovah" hreflang="mg" href="/mg/wol/h/r26/lp-mg" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="id" href="/id/wol/h/r25/lp-in" />
+          <link rel="alternate" type="text/html" title="守望台線上書庫" hreflang="cmn-Hant" href="/cmn-Hant/wol/h/r24/lp-ch" />
+          <link rel="alternate" type="text/html" title="守望台线上书库" hreflang="cmn-Hans" href="/cmn-Hans/wol/h/r23/lp-chs" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="st" href="/st/wol/h/r21/lp-su" />
+          <link rel="alternate" type="text/html" title="საგუშაგო კოშკის ᲝᲜᲚᲐᲘᲜ ᲑᲘᲑᲚᲘᲝᲗᲔᲙᲐ" hreflang="ka" href="/ka/wol/h/r20/lp-ge" />
+          <link rel="alternate" type="text/html" title="Watchtower ˗bha 'SËËDHƐ ˗LO ˗DHƐ 'Ö ƐNTƐNƐTÖ ˗TA" hreflang="daf" href="/daf/wol/h/r502/lp-ycb" />
+          <link rel="alternate" type="text/html" title="INTERNETSKA BIBLIOTEKA Watchtower" hreflang="hr" href="/hr/wol/h/r19/lp-c" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nl" href="/nl/wol/h/r18/lp-o" />
+          <link rel="alternate" type="text/html" title="Őrtorony ONLINE KÖNYVTÁR" hreflang="hu" href="/hu/wol/h/r17/lp-h" />
+          <link rel="alternate" type="text/html" title="Vartiotornin VERKKOKIRJASTO" hreflang="fi" href="/fi/wol/h/r16/lp-fi" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БІБЛІОТЕКА Товариства «Вартова башта»" hreflang="uk" href="/uk/wol/h/r15/lp-k" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sv" href="/sv/wol/h/r14/lp-z" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA INTERNETOWA Strażnicy" hreflang="pl" href="/pl/wol/h/r12/lp-p" />
+          <link rel="alternate" type="text/html" title="ΔΙΑΔΙΚΤΥΑΚΗ ΒΙΒΛΙΟΘΗΚΗ της Σκοπιάς" hreflang="el" href="/el/wol/h/r11/lp-g" />
+          <link rel="alternate" type="text/html" title="Wachtturm ONLINE-BIBLIOTHEK " hreflang="de" href="/de/wol/h/r10/lp-x" />
+          <link rel="alternate" type="text/html" title="የመጠበቂያ ግንብ የኢንተርኔት ቤተ መጻሕፍት" hreflang="eth" href="/eth/wol/h/r501/lp-esl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="pt" href="/pt/wol/h/r5/lp-t" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="es" href="/es/wol/h/r4/lp-s" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="no" href="/no/wol/h/r3/lp-n" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="en" href="/en/wol/h/r1/lp-e" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="ugy" href="/ugy/wol/h/r500/lp-lsu" />
+          <link rel="alternate" type="text/html" title="Waktitoren LIBRARY TAPU INTERNET" hreflang="srn" href="/srn/wol/h/r50/lp-sr" />
+          <link rel="alternate" type="text/html" title="CIFALANA HE INTANETI ce Ntawala" hreflang="sbs" href="/sbs/wol/h/r499/lp-khn" />
+          <link rel="alternate" type="text/html" title="VATQU'ISJAYANJAVAT YISHI' NA INTERNET Watchtower" hreflang="cag" href="/cag/wol/h/r498/lp-nvc" />
+          <link rel="alternate" type="text/html" title="Watchtower KƆLƆ-KPULU-ŊAI VÃAI ŊAI" hreflang="xpe" href="/xpe/wol/h/r496/lp-kp" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mbo" href="/mbo/wol/h/r495/lp-mbo" />
+          <link rel="alternate" type="text/html" title="Watchtower Biblioteca internet lico" hreflang="kpc" href="/kpc/wol/h/r494/lp-cpc" />
+          <link rel="alternate" type="text/html" title="INTERNETPI BIBLIOTECA Watchtower" hreflang="quw" href="/quw/wol/h/r491/lp-qit" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ugn" href="/ugn/wol/h/r490/lp-usl" />
+          <link rel="alternate" type="text/html" title="INTERNETSKA BIBLIOTEKA Watchtower" hreflang="csq" href="/csq/wol/h/r489/lp-hzj" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE KÜTÜPHANE" hreflang="tsm" href="/tsm/wol/h/r488/lp-tkl" />
+          <link rel="alternate" type="text/html" title="Դիտարանի ԱՌՑԱՆՑ ԳՐԱԴԱՐԱՆ" hreflang="hyw" href="/hyw/wol/h/r487/lp-r" />
+          <link rel="alternate" type="text/html" title="המצפה ‏‎—‎‏ ספרייה אונליין " hreflang="isr" href="/isr/wol/h/r486/lp-qsl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="vgt" href="/vgt/wol/h/r485/lp-vgt" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sfb" href="/sfb/wol/h/r484/lp-sbf" />
+          <link rel="alternate" type="text/html" title="Watchtower ƐNTƐRINƐ́TIẀ BIIBILOTƐ́KÍ" hreflang="sef" href="/sef/wol/h/r483/lp-sfc" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="pmf" href="/pmf/wol/h/r482/lp-pmo" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИАТЕКА Сторожэвой башни" hreflang="rmy-x-rmv" href="/rmy-x-rmv/wol/h/r480/lp-rmv" />
+          <link rel="alternate" type="text/html" title="VIVLIOTÉKA OĨVA INTERNÉTPE Watchtower" hreflang="gug" href="/gug/wol/h/r48/lp-gi" />
+          <link rel="alternate" type="text/html" title="ඔන්ලයින් ලයිබ්‍රරි" hreflang="sqs" href="/sqs/wol/h/r479/lp-sls" />
+          <link rel="alternate" type="text/html" title="Makengwero GHOMAMBAPIRA" hreflang="mhw" href="/mhw/wol/h/r478/lp-mbk" />
+          <link rel="alternate" type="text/html" title="TSHIBUTSHILU TSHIA MIKANDA TSHIA KU ENTERNETE tshia Watchtower" hreflang="lua" href="/lua/wol/h/r477/lp-sh" />
+          <link rel="alternate" type="text/html" title="Mikecolay 線上書庫" hreflang="ami" href="/ami/wol/h/r476/lp-ai" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="sgn-RS" href="/sgn-RS/wol/h/r475/lp-sbs" />
+          <link rel="alternate" type="text/html" title="BIBILIYOTEKA YA KUINTANETI " hreflang="diu" href="/diu/wol/h/r474/lp-rny" />
+          <link rel="alternate" type="text/html" title="ILAYIBULALE YA PA INTANETI iya Watchtower" hreflang="nyy-x-nkn" href="/nyy-x-nkn/wol/h/r473/lp-nkn" />
+          <link rel="alternate" type="text/html" title="प्रहरीधरहरा अनलाइन पुस्तकालय" hreflang="nsp" href="/nsp/wol/h/r472/lp-nsl" />
+          <link rel="alternate" type="text/html" title="ကင်းမျှော်စင် အွန်လိုင်း စာကြည့်တိုက်" hreflang="sgn-MM" href="/sgn-MM/wol/h/r471/lp-bus" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA YINH INTERNET Watchtower " hreflang="jac-x-jc" href="/jac-x-jc/wol/h/r470/lp-jc" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="amu" href="/amu/wol/h/r469/lp-amg" />
+          <link rel="alternate" type="text/html" title="Каруулчы шибеениҥ ОНЛАЙН-БИБЛИОТЕКАЗЫ" hreflang="alt" href="/alt/wol/h/r468/lp-alt" />
+          <link rel="alternate" type="text/html" title="Watchtower CISETE CA MIKANDA CA MU INTERNETE" hreflang="nba" href="/nba/wol/h/r467/lp-ngl" />
+          <link rel="alternate" type="text/html" title="Wachtturm ONLINE-BIBLIOTHEK " hreflang="sgg" href="/sgg/wol/h/r466/lp-sgs" />
+          <link rel="alternate" type="text/html" title="Wachtturm ONLINE-BIBLIOTHEK " hreflang="asq" href="/asq/wol/h/r465/lp-ogs" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="csf" href="/csf/wol/h/r464/lp-cbs" />
+          <link rel="alternate" type="text/html" title="បណ្ណាល័យអ៊ីនធឺណិតរបស់ប៉មយាម" hreflang="sgn-KH" href="/sgn-KH/wol/h/r463/lp-cbl" />
+          <link rel="alternate" type="text/html" title="Возьмаськон башнялэн ОНЛАЙН-БИБЛИОТЕКАЕЗ" hreflang="udm" href="/udm/wol/h/r462/lp-um" />
+          <link rel="alternate" type="text/html" title="UTULIKILO WA MIKANDA HA INTERNET wa Watchtower" hreflang="cjk" href="/cjk/wol/h/r461/lp-ck" />
+          <link rel="alternate" type="text/html" title="Watchtower ƲÃGA-WƆLƆI MA WƆLƆ ƁULUGI" hreflang="lom" href="/lom/wol/h/r460/lp-om" />
+          <link rel="alternate" type="text/html" title="Watchtower NUKAP PAPII INTERNETNUM IISTIN" hreflang="jiv" href="/jiv/wol/h/r459/lp-shu" />
+          <link rel="alternate" type="text/html" title="INTERNETPI BIBLIOTECA Watchtower" hreflang="qvz" href="/qvz/wol/h/r458/lp-qip" />
+          <link rel="alternate" type="text/html" title="INTERNETBI DIOSBUJ SHIMI Watchtower" hreflang="qu-x-qxl" href="/qu-x-qxl/wol/h/r457/lp-qcs" />
+          <link rel="alternate" type="text/html" title="Watchtower INTERNETPI BIBLIOTECA" hreflang="qu-x-qib" href="/qu-x-qib/wol/h/r456/lp-qib" />
+          <link rel="alternate" type="text/html" title="INTERNETPI CHURASHCA BIBLIOTECA Watchtower" hreflang="qxr" href="/qxr/wol/h/r454/lp-qcc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nzs" href="/nzs/wol/h/r453/lp-nzs" />
+          <link rel="alternate" type="text/html" title="Watchtower RIBRU KWɄN NUGɄN INTERNETSEʼ
+" hreflang="arh" href="/arh/wol/h/r452/lp-arh" />
+          <link rel="alternate" type="text/html" title="Сторожевой башняның ОНЛАЙН-БИБЛИОТЕКАЗЫ" hreflang="kjh" href="/kjh/wol/h/r450/lp-khk" />
+          <link rel="alternate" type="text/html" title="RAIBHURARI YEPAINDANETI yeWatchtower" hreflang="sn" href="/sn/wol/h/r45/lp-ca" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA TʼA INTERNET Watchtower
+" hreflang="cac" href="/cac/wol/h/r449/lp-chj" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA TU INTERNET" hreflang="ixl" href="/ixl/wol/h/r448/lp-ixl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA ONLINE Watchtower" hreflang="sqk" href="/sqk/wol/h/r446/lp-als" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="gsm" href="/gsm/wol/h/r444/lp-lsg" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sfs" href="/sfs/wol/h/r443/lp-sas" />
+          <link rel="alternate" type="text/html" title="مكتبة برج المراقبة الإلكترونية" hreflang="ary" href="/ary/wol/h/r442/lp-amo" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nsl" href="/nsl/wol/h/r441/lp-ndf" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="swl" href="/swl/wol/h/r440/lp-ssl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="lsp" href="/lsp/wol/h/r439/lp-psl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="csr" href="/csr/wol/h/r438/lp-scr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="ncs" href="/ncs/wol/h/r437/lp-lsn" />
+          <link rel="alternate" type="text/html" title="ǃKhē xu ǂgōmmi INTERNETS AI HÂ ǂKHANINǁGÂUB" hreflang="naq-x-na" href="/naq-x-na/wol/h/r436/lp-na" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="esn" href="/esn/wol/h/r435/lp-lss" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="xki" href="/xki/wol/h/r433/lp-ksi" />
+          <link rel="alternate" type="text/html" title="守望台线上书库" hreflang="csl" href="/csl/wol/h/r432/lp-csl" />
+          <link rel="alternate" type="text/html" title="გინაჯინალ კოშკიშ ონლაინ ბიბლიოთეკა" hreflang="xmf" href="/xmf/wol/h/r431/lp-mgl" />
+          <link rel="alternate" type="text/html" title="CHISHTELØ ASIN KILKAMERA INTERNETYU Watchtower" hreflang="gum" href="/gum/wol/h/r430/lp-gbm" />
+          <link rel="alternate" type="text/html" title="Күзет мұнарасының ОНЛАЙН КІТАПХАНАСЫ" hreflang="kk" href="/kk/wol/h/r43/lp-az" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="asf" href="/asf/wol/h/r428/lp-aus" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="azo" href="/azo/wol/h/r427/lp-awn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sgn-CD" href="/sgn-CD/wol/h/r426/lp-cgs" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="sgn-AO" href="/sgn-AO/wol/h/r425/lp-las" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sgn-SR" href="/sgn-SR/wol/h/r424/lp-ssu" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN DALAM TALIAN Watchtower" hreflang="xml" href="/xml/wol/h/r423/lp-bim" />
+          <link rel="alternate" type="text/html" title="Sargybos bokšto INTERNETINĖ BIBLIOTEKA" hreflang="lls" href="/lls/wol/h/r421/lp-lts" />
+          <link rel="alternate" type="text/html" title="Қўриқчи минорасининг ОНЛАЙН КУТУБХОНАСИ" hreflang="uz-Cyrl" href="/uz-Cyrl/wol/h/r42/lp-uz" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="inl" href="/inl/wol/h/r419/lp-ini" />
+          <link rel="alternate" type="text/html" title="Sargtorņa TIEŠSAISTES BIBLIOTĒKA" hreflang="lsl" href="/lsl/wol/h/r418/lp-lsl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="dse" href="/dse/wol/h/r417/lp-ngt" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="dsl" href="/dsl/wol/h/r415/lp-dsl" />
+          <link rel="alternate" type="text/html" title="ห้องสมุดออนไลน์ของวอชเทาเวอร์" hreflang="tsq" href="/tsq/wol/h/r414/lp-sil" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sgn-CI" href="/sgn-CI/wol/h/r413/lp-lsi" />
+          <link rel="alternate" type="text/html" title="守望台線上書庫" hreflang="tss" href="/tss/wol/h/r412/lp-tsl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="mzy" href="/mzy/wol/h/r411/lp-slm" />
+          <link rel="alternate" type="text/html" title="Rakhwárikilá ONLINE LIBRARY" hreflang="hns" href="/hns/wol/h/r410/lp-sri" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="fmp" href="/fmp/wol/h/r409/lp-ffe" />
+          <link rel="alternate" type="text/html" title="Watchtower
+WÓWAPI OTHÍ WÓWAPI KAȞWÓGYA
+" hreflang="lkt" href="/lkt/wol/h/r408/lp-lkt" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="vsl" href="/vsl/wol/h/r407/lp-lsv" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="pys" href="/pys/wol/h/r406/lp-lsp" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="fcs" href="/fcs/wol/h/r405/lp-lsq" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="zib" href="/zib/wol/h/r403/lp-zsl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="bzs" href="/bzs/wol/h/r402/lp-lsb" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="zsl" href="/zsl/wol/h/r400/lp-zas" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ICH INTERNET tiʼ le Watchtoweroʼ" hreflang="yua" href="/yua/wol/h/r40/lp-may" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="bvl" href="/bvl/wol/h/r398/lp-bvl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="isg" href="/isg/wol/h/r397/lp-isg" />
+          <link rel="alternate" type="text/html" title="Őrtorony ONLINE KÖNYVTÁR" hreflang="hsh" href="/hsh/wol/h/r396/lp-hdf" />
+          <link rel="alternate" type="text/html" title="Watchtowerjeva SPLETNA KNJIŽNICA" hreflang="sgn-SI" href="/sgn-SI/wol/h/r395/lp-szj" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBULALE YA PA
+INTANETI" hreflang="sgn-MW" href="/sgn-MW/wol/h/r394/lp-msl" />
+          <link rel="alternate" type="text/html" title="ものみの塔 オンライン・ライブラリー" hreflang="jsl" href="/jsl/wol/h/r393/lp-jsl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ins" href="/ins/wol/h/r392/lp-ins" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="jls" href="/jls/wol/h/r390/lp-jml" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="ssp" href="/ssp/wol/h/r388/lp-lse" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="mfs" href="/mfs/wol/h/r387/lp-lsm" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA INTERNETOWA Strażnicy" hreflang="pso" href="/pso/wol/h/r385/lp-pdf" />
+          <link rel="alternate" type="text/html" title="Vahitorni VEEBIRAAMATUKOGU" hreflang="eso" href="/eso/wol/h/r384/lp-std" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="fsl" href="/fsl/wol/h/r383/lp-lsf" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE Watchtower" hreflang="ise" href="/ise/wol/h/r382/lp-isl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE da Torre de Vigia" hreflang="psr" href="/psr/wol/h/r381/lp-lgp" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="csn" href="/csn/wol/h/r379/lp-lsc" />
+          <link rel="alternate" type="text/html" title="ΔΙΑΔΙΚΤΥΑΚΗ ΒΙΒΛΙΟΘΗΚΗ της Σκοπιάς" hreflang="gss" href="/gss/wol/h/r378/lp-gsl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="csg" href="/csg/wol/h/r377/lp-sch" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lmp" href="/lmp/wol/h/r376/lp-lbm" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="rmn-x-rm" href="/rmn-x-rm/wol/h/r375/lp-rm" />
+          <link rel="alternate" type="text/html" title="A̱MATAJKUILO̱LMEJ PAN INTERNET Watchtower" hreflang="nhk" href="/nhk/wol/h/r373/lp-nhv" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKE YA MU INTERNET" hreflang="pem" href="/pem/wol/h/r372/lp-kip" />
+          <link rel="alternate" type="text/html" title="Kolo Toko he FATATOHI INITANETE" hreflang="niu" href="/niu/wol/h/r371/lp-nn" />
+          <link rel="alternate" type="text/html" title="Wastaua ONLAIN LAIBRI" hreflang="tcs" href="/tcs/wol/h/r369/lp-tsc" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="kei" href="/kei/wol/h/r368/lp-kei" />
+          <link rel="alternate" type="text/html" title="Vartiotornin VERKKOKIRJASTO" hreflang="fse" href="/fse/wol/h/r366/lp-fid" />
+          <link rel="alternate" type="text/html" title="Күҙәтеү манараһының ОНЛАЙН КИТАПХАНАҺЫ" hreflang="ba" href="/ba/wol/h/r365/lp-bak" />
+          <link rel="alternate" type="text/html" title="Watchtower ka BIBLOTƐKI ƐNTƐRƐNƐTI KAN" hreflang="dyu" href="/dyu/wol/h/r364/lp-jl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="yaq" href="/yaq/wol/h/r363/lp-yq" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="zpg" href="/zpg/wol/h/r362/lp-zpg" />
+          <link rel="alternate" type="text/html" title="KITÊBXANEYA ELEKTRONÎK a Birca Çavdêriyê" hreflang="kmr-x-rd" href="/kmr-x-rd/wol/h/r361/lp-rd" />
+          <link rel="alternate" type="text/html" title="Watchtower KIBĪKO PA ENTELENETE" hreflang="lu" href="/lu/wol/h/r360/lp-ku" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="nla" href="/nla/wol/h/r359/lp-nml" />
+          <link rel="alternate" type="text/html" title="Ахьчаратә бааш ОНЛАИН-АБИБЛИОТЕКА" hreflang="ab" href="/ab/wol/h/r358/lp-abk" />
+          <link rel="alternate" type="text/html" title="ISIPHALA SEZINGWALO ESIKU-INTHANETHI seWatchtower" hreflang="nd" href="/nd/wol/h/r357/lp-nbz" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBULALE UWA PA INTANETI" hreflang="mgr" href="/mgr/wol/h/r356/lp-mwl" />
+          <link rel="alternate" type="text/html" title="Bukui kɛ Haiŋ Yekanga LAMAGBATƐMI INTANƐTI HU" hreflang="men" href="/men/wol/h/r355/lp-me" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NÁA INTERNET Watchtower" hreflang="tcf" href="/tcf/wol/h/r354/lp-tln" />
+          <link rel="alternate" type="text/html" title="Vênnainsâng ONLINE LIBRARY" hreflang="lus" href="/lus/wol/h/r352/lp-ls" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="ksf" href="/ksf/wol/h/r351/lp-bfi" />
+          <link rel="alternate" type="text/html" title="တၢးထီခိးတၢ် online လံာ်ရိဒၢး" hreflang="ksw" href="/ksw/wol/h/r350/lp-kr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NU̱Ú INTERNET Watchtower" hreflang="mxv" href="/mxv/wol/h/r349/lp-mxg" />
+          <link rel="alternate" type="text/html" title="KƐ̄ KPOOGE pio Watchtower ONLINE" hreflang="ogo" href="/ogo/wol/h/r347/lp-og" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA LO INTERNET Watchtower" hreflang="zav" href="/zav/wol/h/r346/lp-zpv" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA EN LÍNEA Watchtower" hreflang="pbb" href="/pbb/wol/h/r345/lp-paz" />
+          <link rel="alternate" type="text/html" title="Гъӕуайгӕнӕн мӕсуги ОНЛАЙН-БИБЛИОТЕКӔ" hreflang="os-x-dgr" href="/os-x-dgr/wol/h/r344/lp-dgr" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA INTERNET YAKAT" hreflang="yan" href="/yan/wol/h/r343/lp-myg" />
+          <link rel="alternate" type="text/html" title="KARTARARABɄ INTERNET'NE Watchtower" hreflang="cto" href="/cto/wol/h/r342/lp-emb" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIYOTÈK ANLÈ SIT-A" hreflang="gcr" href="/gcr/wol/h/r341/lp-gnc" />
+          <link rel="alternate" type="text/html" title="BIBLIƆTƐKƐ WA LO ƐTƐRNƐTƐ wa Watchtower " hreflang="tll" href="/tll/wol/h/r340/lp-ot" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="tet" href="/tet/wol/h/r339/lp-ttb" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA INTERNETPE Watchtower" hreflang="gui" href="/gui/wol/h/r338/lp-gib" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTHÈQUE EN LIGNE" hreflang="eto" href="/eto/wol/h/r337/lp-etn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE MAZINAʼIGANIIGAMIG" hreflang="ojb-x-nor" href="/ojb-x-nor/wol/h/r335/lp-nor" />
+          <link rel="alternate" type="text/html" title="LAYIBBULALI IJANIKA A-INTANETI yaWatchtower" hreflang="toi-zw" href="/toi-zw/wol/h/r334/lp-cgw" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBILIOTEKA ONLINE" hreflang="chw" href="/chw/wol/h/r333/lp-co" />
+          <link rel="alternate" type="text/html" title="EPIIPILIYOTEKA ya Watchtower" hreflang="ngl" href="/ngl/wol/h/r332/lp-le" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA PO INTERNET Watchtower" hreflang="rmy-AR" href="/rmy-AR/wol/h/r331/lp-rma" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA TƗ INTERNET Watchtower" hreflang="chf" href="/chf/wol/h/r330/lp-clt" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE BIBLIOTHEKA" hreflang="rmo" href="/rmo/wol/h/r329/lp-rmx" />
+          <link rel="alternate" type="text/html" title="Watchtower WAN JUUN YIN INTERNET" hreflang="knj" href="/knj/wol/h/r328/lp-kan" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="mcp" href="/mcp/wol/h/r327/lp-mka" />
+          <link rel="alternate" type="text/html" title="Wachtowa ONLAIN LAIBRI" hreflang="bzj" href="/bzj/wol/h/r326/lp-bzk" />
+          <link rel="alternate" type="text/html" title="Bhibhiliyoteka ya Site ya Watchtower" hreflang="cce" href="/cce/wol/h/r324/lp-cpi" />
+          <link rel="alternate" type="text/html" title="Watchtower IITÁÓHKOOKSTAKIOʼPI IITÁÓHKOONIIʼPA IIHTÁÍKKAMSSINAAKIOʼPI" hreflang="bla" href="/bla/wol/h/r323/lp-blf" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="byv" href="/byv/wol/h/r322/lp-du" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NELA INTERNET dela Tore de Vigia" hreflang="vec" href="/vec/wol/h/r321/lp-tal" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Watchtower " hreflang="sxn" href="/sxn/wol/h/r320/lp-sgr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA LINEAPI Watchtower" hreflang="qus" href="/qus/wol/h/r319/lp-qis" />
+          <link rel="alternate" type="text/html" title="ОНЛАЈН БИБЛИОТЕКА Watchtower" hreflang="rmn-cyrl" href="/rmn-cyrl/wol/h/r318/lp-rmc" />
+          <link rel="alternate" type="text/html" title="Ɔwɛn-Aban INTANƐT SO NWOMAKORABEA" hreflang="tw-x-tws" href="/tw-x-tws/wol/h/r317/lp-tws" />
+          <link rel="alternate" type="text/html" title="LIBRARY U ONLINE ni fan ko Wulyang ko Damit" hreflang="yap" href="/yap/wol/h/r316/lp-yp" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="xdy" href="/xdy/wol/h/r315/lp-dyt" />
+          <link rel="alternate" type="text/html" title="Watchtower Online ayamihcikēwikamik" hreflang="crk-latn" href="/crk-latn/wol/h/r310/lp-cy" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE PIPLYOTEEK" hreflang="hrx" href="/hrx/wol/h/r307/lp-hsk" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="mwv" href="/mwv/wol/h/r306/lp-mwi" />
+          <link rel="alternate" type="text/html" title="Naa Bandu Mɛŋgɛlaa KƐSI YAULAŊ O INTANƐITIIYO WA" hreflang="kss" href="/kss/wol/h/r305/lp-ki" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="bjn" href="/bjn/wol/h/r304/lp-bnj" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="chk" href="/chk/wol/h/r303/lp-te" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="btd" href="/btd/wol/h/r300/lp-btd" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="mrv" href="/mrv/wol/h/r299/lp-mgr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="mrq" href="/mrq/wol/h/r298/lp-mqn" />
+          <link rel="alternate" type="text/html" title="KISUEKULU KI ZIBUKU MU KHONDI MAYO" hreflang="yom-x-ibi" href="/yom-x-ibi/wol/h/r297/lp-ibi" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="knx" href="/knx/wol/h/r294/lp-dka" />
+          <link rel="alternate" type="text/html" title="Watchtower ƐNTƐRNƐTË GHË NAKWAFA" hreflang="aba" href="/aba/wol/h/r293/lp-abb" />
+          <link rel="alternate" type="text/html" title="Fáktadoardna NEAHTTAGIRJERÁDJU" hreflang="se" href="/se/wol/h/r291/lp-lp" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Ambilan na Madear" hreflang="bts" href="/bts/wol/h/r290/lp-btk" />
+          <link rel="alternate" type="text/html" title="Watchtower KʼOLIBʼAL WUUJ PA INTERNET
+" hreflang="acr" href="/acr/wol/h/r289/lp-ach" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="nij" href="/nij/wol/h/r288/lp-dk" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="mad" href="/mad/wol/h/r287/lp-mdr" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="aoz" href="/aoz/wol/h/r286/lp-ubm" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="sda" href="/sda/wol/h/r285/lp-tor" />
+          <link rel="alternate" type="text/html" title="Ɔweɔn-Aban INTANƐT DO NWOMAKORABEA" hreflang="fat" href="/fat/wol/h/r284/lp-fa" />
+          <link rel="alternate" type="text/html" title="LIBRARI ONLINE Watchtower" hreflang="iba" href="/iba/wol/h/r283/lp-ia" />
+          <link rel="alternate" type="text/html" title="ROSASER SYAP ONLINE Baryas" hreflang="bhw" href="/bhw/wol/h/r282/lp-ik" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Warta Hadé" hreflang="su" href="/su/wol/h/r281/lp-sd" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE SOU-LAMZ" hreflang="ium" href="/ium/wol/h/r280/lp-imn" />
+          <link rel="alternate" type="text/html" title="I-ONLINE LIBRARY YeBhayibheli" hreflang="zu" href="/zu/wol/h/r28/lp-zu" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEKI YILIO HARUMWA INTERNET" hreflang="zdj" href="/zdj/wol/h/r279/lp-cmg" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="abz" href="/abz/wol/h/r278/lp-abu" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="ban" href="/ban/wol/h/r277/lp-bln" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="hvn" href="/hvn/wol/h/r276/lp-hwu" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="txq" href="/txq/wol/h/r275/lp-tii" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="wew" href="/wew/wol/h/r274/lp-wjw" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBRI SID INTERNET" hreflang="drg" href="/drg/wol/h/r273/lp-rgs" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAN ONLINE Sora Ermomo" hreflang="btx" href="/btx/wol/h/r272/lp-ak" />
+          <link rel="alternate" type="text/html" title="Watchtower MIKANDA YA KE NA INTERNET" hreflang="kg" href="/kg/wol/h/r271/lp-mk" />
+          <link rel="alternate" type="text/html" title="LAIPRI 'E INTERNET TA" hreflang="rtm" href="/rtm/wol/h/r270/lp-ro" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="jav" href="/jav/wol/h/r269/lp-jvn" />
+          <link rel="alternate" type="text/html" title="Vatshtavvah ONLINE LIBRARY" hreflang="pdc" href="/pdc/wol/h/r268/lp-xpa" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="fy" href="/fy/wol/h/r267/lp-fs" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ase" href="/ase/wol/h/r266/lp-asl" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Manuriaigö" hreflang="nia" href="/nia/wol/h/r265/lp-ni" />
+          <link rel="alternate" type="text/html" title="Күзитиш мунариниң ОНЛАЙН КИТАПХАНИСИ" hreflang="ug-cyrl" href="/ug-cyrl/wol/h/r264/lp-ug" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="dak" href="/dak/wol/h/r263/lp-dt" />
+          <link rel="alternate" type="text/html" title="WĚMASƐXWETƐN ƐNTƐNƐ́TI JÍ TƆN Watchtower tɔn" hreflang="fon" href="/fon/wol/h/r262/lp-fo" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="pcm" href="/pcm/wol/h/r261/lp-ngp" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="ybb" href="/ybb/wol/h/r260/lp-bm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="hop" href="/hop/wol/h/r259/lp-hpi" />
+          <link rel="alternate" type="text/html" title="BIBLIYOTÈK ANLÈ ENTÈWNÈT a Lawatchtower" hreflang="gcf" href="/gcf/wol/h/r258/lp-gcr" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लायब्ररी" hreflang="kex" href="/kex/wol/h/r257/lp-knd" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Joujou Paboahon" hreflang="bbc" href="/bbc/wol/h/r256/lp-bt" />
+          <link rel="alternate" type="text/html" title="Watchtower EBIBLIOTEKA ONLAINE" hreflang="vmw" href="/vmw/wol/h/r255/lp-mac" />
+          <link rel="alternate" type="text/html" title="Watchtower LAYIBHRARI YA INTHANETENG" hreflang="nso-x-spl" href="/nso-x-spl/wol/h/r254/lp-spl" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Warta Penting" hreflang="jv" href="/jv/wol/h/r253/lp-ja" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE-AMI LIBRARY-IQ" hreflang="esu" href="/esu/wol/h/r252/lp-yu" />
+          <link rel="alternate" type="text/html" title="ǃKhē xu ǂgōmmi INTERNETS AI HÂ ǂKHANINǁGÂUB " hreflang="naq-x-dmr" href="/naq-x-dmr/wol/h/r251/lp-dmr" />
+          <link rel="alternate" type="text/html" title="Watchtower LIBRARY A INTERNET" hreflang="srm" href="/srm/wol/h/r250/lp-srm" />
+          <link rel="alternate" type="text/html" title="Watchtower TÄRÄ JÖKRÄ INTERNETE" hreflang="gym" href="/gym/wol/h/r249/lp-ngb" />
+          <link rel="alternate" type="text/html" title="BHIBHIRIOTEKA RO MU INTERNETI ro Torre de Vigia" hreflang="ndc" href="/ndc/wol/h/r248/lp-nda" />
+          <link rel="alternate" type="text/html" title="Wakititolen LIBRARY A INTERNET" hreflang="djk" href="/djk/wol/h/r247/lp-akn" />
+          <link rel="alternate" type="text/html" title="BIBLIYOTEKA YA PA INTERNETI ya Watchtower" hreflang="nyu" href="/nyu/wol/h/r246/lp-nyu" />
+          <link rel="alternate" type="text/html" title="BHIBLIOTEKA YA SAITE ya Watchtower" hreflang="tsc" href="/tsc/wol/h/r245/lp-aw" />
+          <link rel="alternate" type="text/html" title="BHIBHLIYOTEKA MU INTERNETI ya Torre de Vigia" hreflang="seh" href="/seh/wol/h/r243/lp-sen" />
+          <link rel="alternate" type="text/html" title="Sama Lel ONLINE GINADYA" hreflang="rmy-x-lva" href="/rmy-x-lva/wol/h/r242/lp-lva" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="fo" href="/fo/wol/h/r241/lp-fr" />
+          <link rel="alternate" type="text/html" title="Sorgtūrņa TĪŠSAISTIS BIBLIOTEKA" hreflang="ltg" href="/ltg/wol/h/r240/lp-ltg" />
+          <link rel="alternate" type="text/html" title="Хурал башнин ОНЛАЙН БИБЛИОТЕКИ" hreflang="cv" href="/cv/wol/h/r239/lp-cu" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NUU̱ INTERNET Watchtower" hreflang="jmx" href="/jmx/wol/h/r237/lp-mxo" />
+          <link rel="alternate" type="text/html" title="Garawul diňiniň ONLAÝN KITAPHANASY" hreflang="tk" href="/tk/wol/h/r236/lp-tmr" />
+          <link rel="alternate" type="text/html" title="Ҝөзәтчи гүлләсинин ОНЛАЈН КИТАБХАНАСЫ" hreflang="az-Cyrl" href="/az-Cyrl/wol/h/r235/lp-aj" />
+          <link rel="alternate" type="text/html" title="Watchtower LAỸAMAQTAXAQUI ANA NEREPI YE INTERNET" hreflang="tob" href="/tob/wol/h/r234/lp-tob" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA INTERNET CHUKÚAMI Watchtower" hreflang="tar" href="/tar/wol/h/r233/lp-trh" />
+          <link rel="alternate" type="text/html" title="NECʼATENAPI LAIʼT NAʼ INTERNET Watchtower" hreflang="plg" href="/plg/wol/h/r232/lp-plg" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA HA INTERNET" hreflang="ote" href="/ote/wol/h/r230/lp-otm" />
+          <link rel="alternate" type="text/html" title="KAPANG BUKU YAMU Watchtower" hreflang="alz" href="/alz/wol/h/r229/lp-alu" />
+          <link rel="alternate" type="text/html" title="TAMKARḌIT DI INTERNET Watchtower" hreflang="kab" href="/kab/wol/h/r228/lp-kby" />
+          <link rel="alternate" type="text/html" title="NGEEL KEFDER Ngeel gor ti jare ɓil INTERNED" hreflang="tui" href="/tui/wol/h/r227/lp-tpr" />
+          <link rel="alternate" type="text/html" title="Σκοπιά—ΒΙΒΛΙΟΘΗΚΗ ΚΑΪ Ο ΙΝΤΕΡΝΕΤ" hreflang="rmn-x-rmn" href="/rmn-x-rmn/wol/h/r225/lp-rmn" />
+          <link rel="alternate" type="text/html" title="Σκοπιά—ΒΙΒΛΙΟΘΗΚΗ ΚΟ ΙΝΤΕΡΝΕΤ" hreflang="rmn-x-rmg" href="/rmn-x-rmg/wol/h/r224/lp-rmg" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA TI INTERNET Watchtower" hreflang="hus" href="/hus/wol/h/r222/lp-hst" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEK LOR INTERNET" hreflang="mfe" href="/mfe/wol/h/r221/lp-ce" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE KÜTÜPHANE" hreflang="tr" href="/tr/wol/h/r22/lp-tk" />
+          <link rel="alternate" type="text/html" title="Watchtower PORPUSTAKAAN ID LAMAN WEB" hreflang="dtp" href="/dtp/wol/h/r219/lp-kad" />
+          <link rel="alternate" type="text/html" title="К′ЬТЕБХАНӘЙА ОНЛАЙН йа Бьрща Qәрәwьлийе" hreflang="kmr-Cyrl" href="/kmr-Cyrl/wol/h/r218/lp-rdc" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA INTERNETIRHU Watchtower" hreflang="tsz" href="/tsz/wol/h/r213/lp-trs" />
+          <link rel="alternate" type="text/html" title="BIBLIOTÈK AN LIGN Watchtower" hreflang="rcf" href="/rcf/wol/h/r212/lp-rcr" />
+          <link rel="alternate" type="text/html" title="یہوواہ دے گواہواں دی آن لائن لائبریری" hreflang="pnb" href="/pnb/wol/h/r211/lp-pjn" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTEK LO ENTERNET" hreflang="crs" href="/crs/wol/h/r210/lp-sc" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA B'A INTERNET Watchtower" hreflang="toj" href="/toj/wol/h/r209/lp-tjo" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="fub" href="/fub/wol/h/r208/lp-fd" />
+          <link rel="alternate" type="text/html" title="INTERNETPI BIBLIOTECA Watchtower" hreflang="qug" href="/qug/wol/h/r207/lp-qic" />
+          <link rel="alternate" type="text/html" title="Watchtower LEABHARLANN AR LÍNE " hreflang="ga" href="/ga/wol/h/r204/lp-gc" />
+          <link rel="alternate" type="text/html" title="ƐTƐNƐTƖ A DƐ WA -ZƲÄ ˈBƆGWƖ Watchtower " hreflang="btg" href="/btg/wol/h/r202/lp-et" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA LÓ INTERNET" hreflang="zpa" href="/zpa/wol/h/r201/lp-zpl" />
+          <link rel="alternate" type="text/html" title="LAYIBULARE YA PA INTANETI" hreflang="tog" href="/tog/wol/h/r200/lp-ct" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="ru" href="/ru/wol/h/r2/lp-u" />
+          <link rel="alternate" type="text/html" title="Watchtower ˈSƐƖGBU- NƖAN ˈO ƐNTƐƐNƐTƖ ˈˈkpe" hreflang="gxx" href="/gxx/wol/h/r199/lp-gur" />
+          <link rel="alternate" type="text/html" title="Watchtower LE SƐBHƐPANAN ƐNTƐNƐTI ƝƆƆN" hreflang="goa" href="/goa/wol/h/r198/lp-go" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTHEEK ONLINE" hreflang="pap-x-paa" href="/pap-x-paa/wol/h/r197/lp-paa" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA IPAN INTERNET Watchtower" hreflang="ngu" href="/ngu/wol/h/r196/lp-nhg" />
+          <link rel="alternate" type="text/html" title="Watchtower LATƆBONƐN ƐNTƐNƐTË FƐN" hreflang="ati" href="/ati/wol/h/r195/lp-ati" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA TI INTERNET Watchtower" hreflang="ctu" href="/ctu/wol/h/r193/lp-chl" />
+          <link rel="alternate" type="text/html" title="INTERNETPI BIBLIOTECA Watchtower" hreflang="qvi" href="/qvi/wol/h/r192/lp-qii" />
+          <link rel="alternate" type="text/html" title="LAYIBULARE YA PA INTANETI ya Watchtower" hreflang="tum" href="/tum/wol/h/r191/lp-tb" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA TA INTERNET yuʼun Watchtower" hreflang="tzh" href="/tzh/wol/h/r189/lp-tze" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="wes" href="/wes/wol/h/r188/lp-pcm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nv" href="/nv/wol/h/r187/lp-nv" />
+          <link rel="alternate" type="text/html" title="LIBROS LEW'ET TOJ IHI INTERNET Watchtower " hreflang="wlv" href="/wlv/wol/h/r186/lp-wch" />
+          <link rel="alternate" type="text/html" title="Watchtower SƐB VAEESG ZĨIGA" hreflang="mos" href="/mos/wol/h/r185/lp-mm" />
+          <link rel="alternate" type="text/html" title="AMATLAJKUILOLI IPAN INTERNET
+Watchtower" hreflang="nch" href="/nch/wol/h/r183/lp-nhh" />
+          <link rel="alternate" type="text/html" title="ONLINE LAYBREERIGA Watchtower" hreflang="so" href="/so/wol/h/r182/lp-so" />
+          <link rel="alternate" type="text/html" title="Woaktorm ONLINE-BIBLIOTÄKJ" hreflang="pdt" href="/pdt/wol/h/r179/lp-lwx" />
+          <link rel="alternate" type="text/html" title="RAIBURARI N TE INTANETE ibukin Te Taua-n-Tantani" hreflang="gil" href="/gil/wol/h/r178/lp-gb" />
+          <link rel="alternate" type="text/html" title="ONLINE BIBLIOTEKA Watchtower" hreflang="bs" href="/bs/wol/h/r177/lp-bsn" />
+          <link rel="alternate" type="text/html" title="KITÊBXANEYA ONLAYN ya Birca Qerewiliyê" hreflang="kmr-x-rdu" href="/kmr-x-rdu/wol/h/r176/lp-rdu" />
+          <link rel="alternate" type="text/html" title="Watchtower AMATLAJKUILOLMEJ ITECH INTERNET" hreflang="ncx" href="/ncx/wol/h/r175/lp-nhc" />
+          <link rel="alternate" type="text/html" title="Watchtower MIKANDA I MU INTERNETE" hreflang="sop" href="/sop/wol/h/r174/lp-ksn" />
+          <link rel="alternate" type="text/html" title="Lomiga Faale-Tusi Paia I LE INITANETI" hreflang="sm" href="/sm/wol/h/r173/lp-sm" />
+          <link rel="alternate" type="text/html" title="LAIBULALE JA PA INTANETI ja Watchtower" hreflang="yao" href="/yao/wol/h/r172/lp-ya" />
+          <link rel="alternate" type="text/html" title="ONGULUMAMBO MOINTANETA yiileshomwa yopaMbiimbeli" hreflang="ng" href="/ng/wol/h/r170/lp-od" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBRI ENA INTERNET" hreflang="fj" href="/fj/wol/h/r169/lp-fn" />
+          <link rel="alternate" type="text/html" title="O-Watchtower LIBRARY MORUNGOVI" hreflang="hz" href="/hz/wol/h/r168/lp-hr" />
+          <link rel="alternate" type="text/html" title="ONGULUMAMBO YOKOINTANETA" hreflang="kj" href="/kj/wol/h/r166/lp-ky" />
+          <link rel="alternate" type="text/html" title="LAEPRARI YA INTHANETENG" hreflang="nso" href="/nso/wol/h/r165/lp-se" />
+          <link rel="alternate" type="text/html" title="ḼAIBURARI Ya Watchtower Kha INTHANETHE" hreflang="ve" href="/ve/wol/h/r164/lp-ve" />
+          <link rel="alternate" type="text/html" title="IWatchtower LAYBRARI EKWI-INTANETHI" hreflang="xh" href="/xh/wol/h/r163/lp-xo" />
+          <link rel="alternate" type="text/html" title="ຫ້ອງສະໝຸດອອນລາຍຂອງວັອດສ໌ທາວເວີ້" hreflang="lo" href="/lo/wol/h/r161/lp-la" />
+          <link rel="alternate" type="text/html" title="KʼUBʼIL UʼJ TOJ INTERNET Watchtower" hreflang="mam" href="/mam/wol/h/r160/lp-mz" />
+          <link rel="alternate" type="text/html" title="Tani Watchtower LÍBURU-AGEI LIDAN INTERNET" hreflang="cab" href="/cab/wol/h/r158/lp-grf" />
+          <link rel="alternate" type="text/html" title="RE TATRUUQ CHI TZOLOK Watchtower" hreflang="kek" href="/kek/wol/h/r157/lp-gk" />
+          <link rel="alternate" type="text/html" title="UK'OLB'AL WUJ PA INTERNET Watchtower" hreflang="quc" href="/quc/wol/h/r156/lp-qc" />
+          <link rel="alternate" type="text/html" title="KIKʼOJLIBʼÄL WUJ PA INTERNET Watchtower" hreflang="cak" href="/cak/wol/h/r155/lp-cq" />
+          <link rel="alternate" type="text/html" title="VAIRAA PAPAI NATIRARA Watchtower" hreflang="ty" href="/ty/wol/h/r154/lp-th" />
+          <link rel="alternate" type="text/html" title="FATATUSI I TE ITANETI a te Faleleoleo Maluga" hreflang="tvl" href="/tvl/wol/h/r153/lp-vl" />
+          <link rel="alternate" type="text/html" title="INTERNET RA ULBI SAKANKA NANI Watchtower" hreflang="miq" href="/miq/wol/h/r152/lp-mis" />
+          <link rel="alternate" type="text/html" title="Wachtawa LAYBRI NA DI INTANƐT" hreflang="kri" href="/kri/wol/h/r151/lp-kri" />
+          <link rel="alternate" type="text/html" title="BIBILIYOTEKA ZOKOINTANETA" hreflang="kwn" href="/kwn/wol/h/r150/lp-wg" />
+          <link rel="alternate" type="text/html" title="Mulangidi KIDIDI KYA KUBHAKA MADIVULU MU INTERNETE" hreflang="kmb" href="/kmb/wol/h/r149/lp-kim" />
+          <link rel="alternate" type="text/html" title="Watchtower LIBRARY INDANETINĨ" hreflang="kam" href="/kam/wol/h/r148/lp-kb" />
+          <link rel="alternate" type="text/html" title="PÜTCHIPÜLEE SULU'UKA INTERNET sutuma Watchtower" hreflang="guc" href="/guc/wol/h/r147/lp-wy" />
+          <link rel="alternate" type="text/html" title="המצפה ‏‎—‎‏ ספרייה אונליין " hreflang="he" href="/he/wol/h/r145/lp-q" />
+          <link rel="alternate" type="text/html" title="ကင်းမျှော်စင် အွန်လိုင်း စာကြည့်တိုက်" hreflang="my" href="/my/wol/h/r144/lp-bu" />
+          <link rel="alternate" type="text/html" title="Watchtower—MAKTABA KU ENTERNETE" hreflang="swc" href="/swc/wol/h/r143/lp-zs" />
+          <link rel="alternate" type="text/html" title="Wi Lubele ma i LAIBRARI ME INTANET" hreflang="ach" href="/ach/wol/h/r142/lp-ac" />
+          <link rel="alternate" type="text/html" title="Watchtower OMBIMBILIYOTEKA" hreflang="nyk" href="/nyk/wol/h/r141/lp-nk" />
+          <link rel="alternate" type="text/html" title="Watchtower LEBRALE OKWA INTANETI" hreflang="koo" href="/koo/wol/h/r139/lp-lhk" />
+          <link rel="alternate" type="text/html" title="LAYIBULALE EY'OKU MUKUTU GWAFFE ogwa Intaneeti" hreflang="lg" href="/lg/wol/h/r138/lp-lu" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="pon" href="/pon/wol/h/r136/lp-pp" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="maf" href="/maf/wol/h/r1352/lp-maf" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="mbp" href="/mbp/wol/h/r1351/lp-mly" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="guo" href="/guo/wol/h/r1350/lp-gbr" />
+          <link rel="alternate" type="text/html" title="Wajtaoa LAEBRI LONG INTENET" hreflang="bi" href="/bi/wol/h/r135/lp-lm" />
+          <link rel="alternate" type="text/html" title="प्रहरीधरहरा अनलाइन लाइब्रेरी" hreflang="taj" href="/taj/wol/h/r1349/lp-tme" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE NA NDÖ TI INTERNET Watchtower" hreflang="mzv" href="/mzv/wol/h/r1348/lp-mnj" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE NA NDÖ TI INTERNET Watchtower" hreflang="bjo" href="/bjo/wol/h/r1347/lp-bnm" />
+          <link rel="alternate" type="text/html" title="AMAKTABA KU ENTERNETE" hreflang="flr" href="/flr/wol/h/r1346/lp-kfl" />
+          <link rel="alternate" type="text/html" title="የመጠበቂያ ግንብ የኢንተርኔት ቤተ መጻሕፍት" hreflang="hdy" href="/hdy/wol/h/r1345/lp-hdy" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA U ENTERNETE" hreflang="hem" href="/hem/wol/h/r1344/lp-khb" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ood" href="/ood/wol/h/r1343/lp-ppg" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="pt-AO" href="/pt-AO/wol/h/r1342/lp-tng" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="trp" href="/trp/wol/h/r1341/lp-kbk" />
+          <link rel="alternate" type="text/html" title="RAIBHURARI YO MU INTERNETI YO
+Watchtower" hreflang="ndc-x-ndw" href="/ndc-x-ndw/wol/h/r1340/lp-ndw" />
+          <link rel="alternate" type="text/html" title="Watchtower TANAKIʼAGA TOHI ʼI TE NETI" hreflang="wls" href="/wls/wol/h/r134/lp-wa" />
+          <link rel="alternate" type="text/html" title="TXISUEKELU TXA MIKANDA TXA Torre de Vigia" hreflang="mxg" href="/mxg/wol/h/r1339/lp-mbn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="rmo-FR" href="/rmo-FR/wol/h/r1338/lp-rmf" />
+          <link rel="alternate" type="text/html" title="OMBANDU TUKOZA IKANDA ya Torre de Vigia" hreflang="blv" href="/blv/wol/h/r1337/lp-kbl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lst" href="/lst/wol/h/r1336/lp-tts" />
+          <link rel="alternate" type="text/html" title="Watchtower KIRIHKARU’SA INARAN VIDEORU’SA INTERNETKE" hreflang="cbt" href="/cbt/wol/h/r1335/lp-hwi" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sgn-CM" href="/sgn-CM/wol/h/r1333/lp-cml" />
+          <link rel="alternate" type="text/html" title="watchtower online library" hreflang="gu-Latn" href="/gu-Latn/wol/h/r1332/lp-grm" />
+          <link rel="alternate" type="text/html" title="உவாட்ச்டவர் ஆன்லைன் லைப்ரரி" hreflang="ta-x-tls" href="/ta-x-tls/wol/h/r1331/lp-tls" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="grb" href="/grb/wol/h/r1330/lp-grb" />
+          <link rel="alternate" type="text/html" title="Ohinga mar Jarito LAIBRARI E INTANET" hreflang="luo" href="/luo/wol/h/r133/lp-lo" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="sd-Deva" href="/sd-Deva/wol/h/r1329/lp-ndv" />
+          <link rel="alternate" type="text/html" title="Watchtower KʼOLIBʼAL RE RI TAQ WUUJ PA INTERNET" hreflang="acr-x-acr" href="/acr-x-acr/wol/h/r1328/lp-acr" />
+          <link rel="alternate" type="text/html" title="KʼOLBʼAL WUJ PA INTERNET Watchtower" hreflang="acr-x-acc" href="/acr-x-acc/wol/h/r1327/lp-acc" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="ro-x-rnk" href="/ro-x-rnk/wol/h/r1326/lp-rnk" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKE U MBOKO NDJA BIAMU Watchtower" hreflang="lel" href="/lel/wol/h/r1325/lp-bhl" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nag" href="/nag/wol/h/r1324/lp-ngd" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="lsy" href="/lsy/wol/h/r1323/lp-mts" />
+          <link rel="alternate" type="text/html" title="THƯ VIỆN TRỰC TUYẾN Tháp Canh" hreflang="jra" href="/jra/wol/h/r1322/lp-jar" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="kn-x-kbb" href="/kn-x-kbb/wol/h/r1321/lp-kbb" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="dzo-Tibt" href="/dzo-Tibt/wol/h/r1320/lp-dz" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="dhv" href="/dhv/wol/h/r132/lp-lf" />
+          <link rel="alternate" type="text/html" title="watchtower online library" hreflang="pa-Latn" href="/pa-Latn/wol/h/r1319/lp-pjr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sls" href="/sls/wol/h/r1318/lp-sgl" />
+          <link rel="alternate" type="text/html" title="Watchtower Online Library" hreflang="hi-Latn" href="/hi-Latn/wol/h/r1317/lp-hrm" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="anm" href="/anm/wol/h/r1316/lp-anm" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="gbm" href="/gbm/wol/h/r1315/lp-grw" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="hne-Deva" href="/hne-Deva/wol/h/r1314/lp-cgd" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nbu" href="/nbu/wol/h/r1313/lp-ngr" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="awa" href="/awa/wol/h/r1312/lp-awd" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="xnr" href="/xnr/wol/h/r1311/lp-kgh" />
+          <link rel="alternate" type="text/html" title="वॉचटावर ऑनलाइन लाइब्रेरी" hreflang="sck-Deva" href="/sck-Deva/wol/h/r1310/lp-sdd" />
+          <link rel="alternate" type="text/html" title="Гаравул диңиниң ОНЛАЙН КИТАПХАНАСЫ" hreflang="tk-Cyrl" href="/tk-Cyrl/wol/h/r131/lp-tm" />
+          <link rel="alternate" type="text/html" title="વૉચટાવર ઓનલાઇન લાઇબ્રેરી" hreflang="kfr" href="/kfr/wol/h/r1309/lp-kcc" />
+          <link rel="alternate" type="text/html" title="ལྟ་སྲུང་སྟེགས་བུའི་དྲྭ་ཐོག་དཔེ་མཛོད།" hreflang="bo" href="/bo/wol/h/r1302/lp-tbt" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE da Torre de Vigia" hreflang="nsx" href="/nsx/wol/h/r1300/lp-sgo" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="sw" href="/sw/wol/h/r13/lp-sw" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БІБЛІОТЕКА Товариства «Вартова башта»" hreflang="rue" href="/rue/wol/h/r1299/lp-rsc" />
+          <link rel="alternate" type="text/html" title="مكتبة برج المراقبة الإلكترونية" hreflang="sgn-LB" href="/sgn-LB/wol/h/r1290/lp-lbs" />
+          <link rel="alternate" type="text/html" title="LAEBORARI YA MO INTERNET" hreflang="tn" href="/tn/wol/h/r129/lp-tn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE da Torre de Vigia" hreflang="olu" href="/olu/wol/h/r1289/lp-kvm" />
+          <link rel="alternate" type="text/html" title="KUATIAÑEꞌẼ RENDA ON-LINE Torre de Vigiape" hreflang="kgk" href="/kgk/wol/h/r1284/lp-kaa" />
+          <link rel="alternate" type="text/html" title="KUAXIA PARA RYRU Torre de Vigia regua" hreflang="gun" href="/gun/wol/h/r1281/lp-gim" />
+          <link rel="alternate" type="text/html" title="የመጠበቂያ ግንብ የኢንተርኔት ቤተ መጻሕፍት" hreflang="jw-gde" href="/jw-gde/wol/h/r1280/lp-gde" />
+          <link rel="alternate" type="text/html" title="LUNDILU DIA NKANDA MU INTERNETE - dia Mbangi za Yave" hreflang="kwy" href="/kwy/wol/h/r128/lp-kg" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="crj-Latn" href="/crj-Latn/wol/h/r1276/lp-csr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="bho-MU" href="/bho-MU/wol/h/r1271/lp-bhm" />
+          <link rel="alternate" type="text/html" title="ISOMERO RYO KURI INTERINETI rya Watchtower" hreflang="rw" href="/rw/wol/h/r127/lp-yw" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="acu" href="/acu/wol/h/r1269/lp-ahw" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sgn-BI" href="/sgn-BI/wol/h/r1268/lp-brs" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE KÜTÜPHANE" hreflang="kiu" href="/kiu/wol/h/r1267/lp-zzn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHEQUE EN LIGNE Watchtower" hreflang="dje" href="/dje/wol/h/r1266/lp-zr" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA LU INTERNET Watchtower" hreflang="zpd" href="/zpd/wol/h/r1264/lp-zpx" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="zpj" href="/zpj/wol/h/r1261/lp-zpc" />
+          <link rel="alternate" type="text/html" title="Watchtower MIKANDA OYO EZALI NA INTERNET" hreflang="ln" href="/ln/wol/h/r126/lp-li" />
+          <link rel="alternate" type="text/html" title="Rawvianaw ONLINE LIBRARY" hreflang="czt" href="/czt/wol/h/r1259/lp-zo" />
+          <link rel="alternate" type="text/html" title="BIBILOTEK yi Watchtower MU NZILA NSINGA" hreflang="yom-x-ymb" href="/yom-x-ymb/wol/h/r1252/lp-ymb" />
+          <link rel="alternate" type="text/html" title="ඔන්ලයින් ලයිබ්‍රරි " hreflang="si" href="/si/wol/h/r125/lp-sn" />
+          <link rel="alternate" type="text/html" title="Watchtower LABURARE NA INTANE" hreflang="yer" href="/yer/wol/h/r1249/lp-yg" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="csw-x-ycs" href="/csw-x-ycs/wol/h/r1248/lp-ycs" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="csw-x-yc" href="/csw-x-yc/wol/h/r1247/lp-yc" />
+          <link rel="alternate" type="text/html" title="Wachtturm ONLINE-BIBLIOTHEK " hreflang="gsw" href="/gsw/wol/h/r1244/lp-xsw" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sgn-bw" href="/sgn-bw/wol/h/r1242/lp-wsl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ON-LINE da Torre de Vigia" hreflang="wap" href="/wap/wol/h/r1241/lp-wph" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="cwd-x-wcs" href="/cwd-x-wcs/wol/h/r1230/lp-wcs" />
+          <link rel="alternate" type="text/html" title="RAIBURARE Y'AHA INTANEETI eya Watchtower" hreflang="nyn" href="/nyn/wol/h/r123/lp-rr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="cwd-x-wc" href="/cwd-x-wc/wol/h/r1229/lp-wc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="prk" href="/prk/wol/h/r1227/lp-wam" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="mer" href="/mer/wol/h/r1223/lp-uu" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="upv" href="/upv/wol/h/r1221/lp-urp" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="suk" href="/suk/wol/h/r1219/lp-uk" />
+          <link rel="alternate" type="text/html" title="كۈزىتىش مۇنارى تور كۈتۈپخانىسى" hreflang="ug-x-uga" href="/ug-x-uga/wol/h/r1218/lp-uga" />
+          <link rel="alternate" type="text/html" title="Watchtower GUA̱A̱TH BUƆKNI KÄ INTƐRNƐT" hreflang="nus" href="/nus/wol/h/r1217/lp-ue" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="tza" href="/tza/wol/h/r1216/lp-tzl" />
+          <link rel="alternate" type="text/html" title="KARETA JENY INTERNET TA
+Kawo auto ta tuwaro aino" hreflang="car-x-tyw" href="/car-x-tyw/wol/h/r1215/lp-tyw" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="nan-x-twd" href="/nan-x-twd/wol/h/r1210/lp-twd" />
+          <link rel="alternate" type="text/html" title="NIPEꞌTISE PAPERA PŨRĨ TURI ON-LINE ye Torre Vigiare" hreflang="tuo" href="/tuo/wol/h/r1208/lp-tuo" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="tac" href="/tac/wol/h/r1202/lp-trw" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="tuv" href="/tuv/wol/h/r1201/lp-trn" />
+          <link rel="alternate" type="text/html" title="ƐNTƐNƐTI SU FLUWA SIEWLƐ Watchtower " hreflang="bci" href="/bci/wol/h/r120/lp-ao" />
+          <link rel="alternate" type="text/html" title="Минораи посбони ОНЛАЙН КИТОБХОНА" hreflang="tg-UZ" href="/tg-UZ/wol/h/r1182/lp-tju" />
+          <link rel="alternate" type="text/html" title="BHIBHIRIOTEKA RE MU INTERNETI re Torre dhe Vhijiya" hreflang="twx" href="/twx/wol/h/r1180/lp-tew" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN DALAM TALIAN Watchtower" hreflang="ms" href="/ms/wol/h/r118/lp-ml" />
+          <link rel="alternate" type="text/html" title="MBIBLIOTEKA ON-LINE ra Torre ya Vigia" hreflang="ter" href="/ter/wol/h/r1179/lp-ter" />
+          <link rel="alternate" type="text/html" title="POPERAPATAÜ̃ ONLINE Dauü̃taecü " hreflang="tca" href="/tca/wol/h/r1174/lp-tcn" />
+          <link rel="alternate" type="text/html" title="BIBILIOTEKE YA MU ENTERNETE Watchtower" hreflang="tap" href="/tap/wol/h/r1172/lp-tbw" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="tab" href="/tab/wol/h/r1170/lp-tbn" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="tsg" href="/tsg/wol/h/r1169/lp-ta" />
+          <link rel="alternate" type="text/html" title="ওয়াচটাওয়ার অনলাইন লাইব্রেরি" hreflang="syl-x-syl" href="/syl-x-syl/wol/h/r1167/lp-syl" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="sus" href="/sus/wol/h/r1161/lp-sus" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE da Torre de Vigia" hreflang="cri" href="/cri/wol/h/r1160/lp-stn" />
+          <link rel="alternate" type="text/html" title="Ieuwa Ehay Enoi Haria e POPERA KOꞌI" hreflang="mav" href="/mav/wol/h/r1159/lp-stm" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA INTERNETOWA
+Strażnicy" hreflang="szl" href="/szl/wol/h/r1156/lp-ssn" />
+          <link rel="alternate" type="text/html" title="LAIBULALI YA PA INTANETI ya Watchtower" hreflang="sby" href="/sby/wol/h/r1154/lp-sol" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nbs" href="/nbs/wol/h/r1150/lp-sln" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sat" href="/sat/wol/h/r1140/lp-shr" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sat-Deva" href="/sat-Deva/wol/h/r1138/lp-shd" />
+          <link rel="alternate" type="text/html" title="Bibliaki axetibo INTERNETHAIN DIOSSEN JOIKI IKÁBO" hreflang="shp" href="/shp/wol/h/r1137/lp-shc" />
+          <link rel="alternate" type="text/html" title="BIBLIƆTƐKƐ DJELÁ ƐNTƐRNƐTƐ djɛ Watchtower" hreflang="soe" href="/soe/wol/h/r1135/lp-sgm" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-КИТОБХӮНАИ Бурҷи дидбони" hreflang="sgh" href="/sgh/wol/h/r1134/lp-sgh" />
+          <link rel="alternate" type="text/html" title="Watchtower KIBĪKO PA ENTERNETE" hreflang="sng" href="/sng/wol/h/r1133/lp-sga" />
+          <link rel="alternate" type="text/html" title="ห้องสมุดออนไลน์ของวอชเทาเวอร์" hreflang="th" href="/th/wol/h/r113/lp-si" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="saq" href="/saq/wol/h/r1129/lp-sbr" />
+          <link rel="alternate" type="text/html" title="PERPUSTAKAAN ONLINE Menara Pengawal" hreflang="loe" href="/loe/wol/h/r1127/lp-sal" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="sgn-RW" href="/sgn-RW/wol/h/r1126/lp-rws" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БИБЛИОТЕКА Сторожевой башни" hreflang="rmy-x-rvc" href="/rmy-x-rvc/wol/h/r1123/lp-rvc" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="rug" href="/rug/wol/h/r1122/lp-rv" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="ro-x-rnn" href="/ro-x-rnn/wol/h/r1120/lp-rnn" />
+          <link rel="alternate" type="text/html" title="BIBLIYOTEKA Dzra Watchtower Ka Internet" hreflang="rng" href="/rng/wol/h/r1117/lp-rn" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН-БІБЛІОТЕКА Товариства «Вартова башта»" hreflang="rmy-UA" href="/rmy-UA/wol/h/r1116/lp-rmu" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKA INTERNETOWA Strażnicy" hreflang="rml" href="/rml/wol/h/r1115/lp-rmt" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NI NUU LU INTERNET Watchtower" hreflang="zai" href="/zai/wol/h/r111/lp-zpi" />
+          <link rel="alternate" type="text/html" title="ONLAJN BIBLIOTEKA Watchtower" hreflang="rmn-x-rme" href="/rmn-x-rme/wol/h/r1109/lp-rme" />
+          <link rel="alternate" type="text/html" title="ОНЛАЙН БИБЛИОТЕКА „Стражева кула“" hreflang="rmn-x-rmb" href="/rmn-x-rmb/wol/h/r1108/lp-rmb" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA-ONLINE Tuor da guardia" hreflang="rm-x-rhs" href="/rm-x-rhs/wol/h/r1105/lp-rhs" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA ONLINE Tuor da Guardgia" hreflang="rm-x-rh" href="/rm-x-rh/wol/h/r1103/lp-rh" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="nen" href="/nen/wol/h/r1102/lp-re" />
+          <link rel="alternate" type="text/html" title="Biblyamanta INTERNETPI YAĈAKUNAPAQ" hreflang="quf" href="/quf/wol/h/r1099/lp-qum" />
+          <link rel="alternate" type="text/html" title="Bibliapita INTERNETCHO PUBLICACIUNNINCHICUNA" hreflang="qub" href="/qub/wol/h/r1098/lp-qul" />
+          <link rel="alternate" type="text/html" title="YANAPAYCUNA YAĆHACHINAPÄ INTERNETĆHU Bibliapita" hreflang="qvw" href="/qvw/wol/h/r1097/lp-quh" />
+          <link rel="alternate" type="text/html" title="INTERNETBI BIBLIOTECA Watchtower" hreflang="qug-x-qix" href="/qug-x-qix/wol/h/r1095/lp-qix" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="pau" href="/pau/wol/h/r1091/lp-pu" />
+          <link rel="alternate" type="text/html" title="یہوواہ کے گواہوں کی آن لائن لائبریری" hreflang="ur" href="/ur/wol/h/r109/lp-ud" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="pjt" href="/pjt/wol/h/r1089/lp-ptj" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA PAN INTERNET Watchtower " hreflang="poh" href="/poh/wol/h/r1086/lp-pqm" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="poi" href="/poi/wol/h/r1085/lp-ppu" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="pma" href="/pma/wol/h/r1079/lp-pma" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="fuf" href="/fuf/wol/h/r1077/lp-plr" />
+          <link rel="alternate" type="text/html" title="Avuriwket MADIKTE UKAGTAN AMUN INTERNET" hreflang="plu" href="/plu/wol/h/r1076/lp-plk" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE EN LIGNE Watchtower" hreflang="pri" href="/pri/wol/h/r1072/lp-pic" />
+          <link rel="alternate" type="text/html" title="LAYIBULALE YA PAINTANETI ya Watchtower" hreflang="phm" href="/phm/wol/h/r1070/lp-phm" />
+          <link rel="alternate" type="text/html" title="Watchtower LAIBULALE YA PA
+INTANETI" hreflang="ny" href="/ny/wol/h/r107/lp-cn" />
+          <link rel="alternate" type="text/html" title="Cok rak fan ŋwǝǝ MA Pǝ INTERNETmǝǝ Watchtower " hreflang="mua" href="/mua/wol/h/r1066/lp-ou" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA NUUA INTERNET Watchtower" hreflang="otm" href="/otm/wol/h/r1065/lp-ote" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="kos" href="/kos/wol/h/r1062/lp-os" />
+          <link rel="alternate" type="text/html" title="BIBLIOTEKË MÄ INTERNET Watchtower" hreflang="mco" href="/mco/wol/h/r106/lp-mx" />
+          <link rel="alternate" type="text/html" title="Watchtower MAKTABA KWENYE MTANDAO" hreflang="rag" href="/rag/wol/h/r1057/lp-ol" />
+          <link rel="alternate" type="text/html" title="FALETUHI INITANETI a te Olomatamata" hreflang="tkl" href="/tkl/wol/h/r1055/lp-oe" />
+          <link rel="alternate" type="text/html" title="Watchtower BIIYAABKOONSING MZINʼIGNAN MAAWNJICHGEWIN" hreflang="otw" href="/otw/wol/h/r1054/lp-odw" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="crm-x-oc" href="/crm-x-oc/wol/h/r1051/lp-oc" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="mlu" href="/mlu/wol/h/r1049/lp-ob" />
+          <link rel="alternate" type="text/html" title="प्रहरीधरहरा अनलाइन लाइब्रेरी " hreflang="new" href="/new/wol/h/r1046/lp-nw" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="ntu" href="/ntu/wol/h/r1044/lp-ntu" />
+          <link rel="alternate" type="text/html" title="LAIBULALE YA PA INTANETI ya Watchtower" hreflang="nse-mz" href="/nse-mz/wol/h/r1042/lp-nsm" />
+          <link rel="alternate" type="text/html" title="ᐗᒡᑕᐎᕒ ​ ᐃᓐᑎᕒᓀᑦ ​ ᒪᓯᓇᐃᑲᓃᑲᒥᒃ " hreflang="ojb-x-nos" href="/ojb-x-nos/wol/h/r1037/lp-nos" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nmk" href="/nmk/wol/h/r1032/lp-nmk" />
+          <link rel="alternate" type="text/html" title="SIFALANA SA FA INTANETI sa Watchtower" hreflang="nka" href="/nka/wol/h/r1030/lp-nky" />
+          <link rel="alternate" type="text/html" title="Wastaoa ONLINE LIBRARY" hreflang="pis" href="/pis/wol/h/r103/lp-sp" />
+          <link rel="alternate" type="text/html" title="Torre de Vigia PAPERAITÁ INTERNET UPÉ" hreflang="yrl" href="/yrl/wol/h/r1025/lp-ngu" />
+          <link rel="alternate" type="text/html" title="BIBLIOTƐKƐ TI YA INTERNET Watchtower" hreflang="ngb" href="/ngb/wol/h/r1022/lp-ngn" />
+          <link rel="alternate" type="text/html" title="BIBLIOTHÈQUE GE INTERNET’G Watchtower" hreflang="sba" href="/sba/wol/h/r1019/lp-ng" />
+          <link rel="alternate" type="text/html" title="LAIBULALE YA PA INTANETI ya Watchtower " hreflang="nse" href="/nse/wol/h/r1017/lp-nen" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="ndh" href="/ndh/wol/h/r1014/lp-ndl" />
+          <link rel="alternate" type="text/html" title="Vòchtavör ÒNLĀIN LAËPRËRĪ" hreflang="caq" href="/caq/wol/h/r1010/lp-nc" />
+          <link rel="alternate" type="text/html" title="Watchtower ONLINE LIBRARY" hreflang="nmq" href="/nmq/wol/h/r1009/lp-nb" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIYOTEKA ONLAYINI" hreflang="mny" href="/mny/wol/h/r1006/lp-myw" />
+          <link rel="alternate" type="text/html" title="Watchtower BIBLIOTECA EN LÍNEA" hreflang="meh" href="/meh/wol/h/r1003/lp-mxt" />
+          <link rel="alternate" type="text/html" title="BIBLIOTECA EN LÍNEA Watchtower" hreflang="xtd" href="/xtd/wol/h/r1001/lp-mxn" />
+          <link rel="alternate" type="text/html" title="Күзәтү манарасының ОНЛАЙН-КИТАПХАНӘСЕ" hreflang="tt" href="/tt/wol/h/r100/lp-tat" />
+      
+          <script>
+      var localizedNumbers = ["0","1"];
+      window.VIDEOJS_NO_DYNAMIC_STYLE = true;
+        </script>
+  
+  
+  <input id="insightApi" type="hidden" value="https://b.jw-cdn.org/apis/insight/events" />
+
+  <script src="/assets/js/+0+3b23965c032d57f4d3f2965f87b3740e2c650208.js"></script>
+
+  </head>
+<body class="showRuby cc-theme--light DynamicLayout">
+<style id="scalableui"></style>
+<script>
+    if (window.Cookies != null) {
+      // Apply user preferred font size
+        // Doesn't apply to static pages, all of which don't scale text
+      var fontScale = Cookies.get('fontScale');
+
+      if (fontScale) {
+        var scalableuiStyleContainer = document.getElementById('scalableui');
+        var scalableuiStyleSheet = scalableuiStyleContainer.sheet;
+
+        scalableuiStyleSheet.insertRule(
+          '.scalableui{font-size:' + fontScale * 100 + '%;}',
+          scalableuiStyleSheet.cssRules.length
+        );
+      }
+    }
+</script>
+<div id="wrapper" class="dropShadow50">
+  <input id="locale" type="hidden" value="es" />
+<input id="tooltipContentErrorMessage" type="hidden" value="Por favor, haga clic aquí para abrir el documento." />
+<input id="rsconf" type="hidden" value="r4" />
+<input id="lib" type="hidden" value="lp-s" />
+<input id="libLang" type="hidden" value="Español" />
+<input id="libTitle" type="hidden" value="Publicaciones en español (1950-2024)" />
+<input id="libDir" type="hidden" value="ltr" />
+<input id="libLangSym" type="hidden" value="S" />
+<input id="libLangScript" type="hidden" value="ROMAN" />
+<input id="libLangIsSignLanguage" type="hidden" value="" />
+<input id="libraryLocale" type="hidden" value="es" />
+<input id="contentLocale" type="hidden" value="es" />
+<input id="contentRsconf" type="hidden" value="r4" />
+<input id="contentLib" type="hidden" value="lp-s" />
+<input id="contentLibLang" type="hidden" value="Español" />
+<input id="contentLibTitle" type="hidden" value="Publicaciones en español (1950-2024)" />
+<input id="rubyAvailable" type="hidden" value="false" />
+<input id="contentLibDir" type="hidden" value="ltr" />
+<input id="contentLibLangSym" type="hidden" value="S" />
+<input id="contentLibLangScript" type="hidden" value="ROMAN" />
+<input id="contentLibLangIsSignLanguage" type="hidden" value="false" />
+<input id="siteCookieDomain" type="hidden" value="wol.jw.org" />
+<input id="audioMultiselect" type="hidden" value="" />
+<input id="site" type="hidden" value="unified" />
+<input id="updatedMediaPlayer" type="hidden" value="1" />
+
+    <div id="regionHeader" class="chrome showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+    <div id="siteBanner">
+    <div class="title">
+        <a href="/es/wol/h/r4/lp-s">
+            <span class="logo"><span class="icon"></span></span>
+            <div class="ellipsized label">
+                <span class="ellipsized titleBig">BIBLIOTECA EN LÍNEA Watchtower</span>
+                <div class="ellipsized titleLittle siteTitleLine1">Watchtower</div>
+                <div class="ellipsized titleLittle siteTitleLine2">BIBLIOTECA EN LÍNEA</div>
+            </div>
+        </a>
+    </div>
+          <div class="language">
+            <a class="chrome librarySelectionLink spriteLink"
+               data-lang="S" href="/es/wol/li/r4/lp-s">
+                <span class="icon"></span>
+                <span class="label">Español</span>
+            </a>
+        </div>
+  </div>
+    <div id="toolbarFrame">
+    <div id="standardSearch" class="searchControl">
+          <form class="searchForm" role="search" method="GET" action="/es/wol/qt/r4/lp-s">
+  <div class="searchFieldContainer">
+  <input type="hidden" id="st" name="st" />
+  <input class="searchField"
+           name="q"
+           accept-charset="utf-8"
+           type="text"
+           title="Operadores de búsqueda: * = uno o más caracteres; ? = un carácter; &quot;&nbsp;&quot; = frase exacta; & = y; | = o; ! = no; () = agrupa combinaciones de palabras"
+           aria-label="búsqueda de palabras o texto bíblico"
+           placeholder="Introducir búsqueda"
+           autocomplete="off"
+           autocapitalize="off"
+           autocorrect="off"
+               autofocus="autofocus"
+           spellcheck="false"
+           maxlength="256"
+           value=""/>
+        <span class="searchFieldCancel"><span class="icon"></span></span>
+      </div>
+  <div class="searchControlContainer">
+    <input type="hidden"
+           name="p"
+           value="par"/>
+        <input type="hidden"
+               name="r"
+               value="occ"/>
+        <input class="searchButton" type="submit" value="BUSCAR"/>
+  </div>
+  <div class="searchControlButtons">
+    <button class="searchIcon menuButton" type="button" aria-label="buscar"><span class="icon"></span></button>
+    <button class="closeIcon menuButton" type="button" aria-label="cancelar"><span class="icon"></span></button>
+  </div>
+    <div class="suggestions hidden"></div>
+</form>
+        </div>
+    <div id="toolbarMenu">
+        <ul class="menu" role="menu">
+                      <li id="menuToolsPreferences" class="menuButton iconOnly menuRight" role="menuitem"
+                    aria-label="configuración">
+                    <a href="/es/wol/pref/r4/lp-s?url=%2Fes%2Fwol%2Fh%2Fr4%2Flp-s"
+                       rel="nofollow"><span class="icon"></span>
+                    </a>
+                </li>
+                        <li id="menuToolsShare" class="menuButton iconOnly menuRight"
+              role="menuitem"
+              aria-label="compartir">
+            <a id="shareButton" class="shareButtonIcon hidden" href="#">
+              <span class="icon"></span>
+            </a>
+          </li>
+                      </ul>
+    </div>
+    <div id="menuHome" role="menuitem" class="showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+        <a href="/es/wol/h/r4/lp-s" aria-label="inicio">
+            <span class="icon"></span>
+        </a>
+    </div>
+    <div id="menuFrame">
+        <ul id="menuBar" class="menu" role="menubar">
+                                  <li id="menuBible" class="chrome menuButton showRuby ml-S ms-ROMAN dir-ltr" role="menuitem"
+                        aria-label="Biblia" lang="es" data-lang="S" dir="ltr">
+                        <a href="/es/wol/binav/r4/lp-s" role="menuitem"
+                            aria-label="Biblia"><span class="icon"></span><span
+                                    class="label">BIBLIA</span></a>
+                    </li>
+        
+                <li id="menuPublications" class="chrome menuButton showRuby ml-S ms-ROMAN dir-ltr" role="menuitem"
+                    aria-label="publicaciones" lang="es" data-lang="S" dir="ltr">
+                    <a href="/es/wol/library/r4/lp-s/biblioteca" role="menuitem" 
+                        aria-label="publicaciones"><span class="icon"></span>
+                            <span class="label">PUBLICACIONES</span></a>
+                </li>
+
+                            <li id="menuToday" class="chrome menuButton showRuby ml-S ms-ROMAN dir-ltr" role="menuitem"
+                        aria-label="reuniones" lang="es" data-lang="S" dir="ltr">
+                        <a class="todayNav" href="/es/wol/meetings/r4/lp-s" role="menuitem"
+                            aria-label="reuniones"><span class="icon"></span><span
+                                    class="label">REUNIONES</span></a>
+                    </li>
+                                <li id="menuSearchHitNext"
+                    class="chrome menuButton iconOnly menuRight hidden showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+                    <a href="#"><span class="icon"></span></a></li>
+              </ul>
+    </div>
+</div>
+            <input id="returnToLibrary" type="hidden" value="Regresar a {LibraryName}" />
+    <div id="userStatus" class="hidden" data-library-color="">
+        <div class="ellipsized currentLibrary">
+            <a class="chrome librarySelectionLink spriteLink" data-lang="S"
+               href="/es/wol/li/r4/lp-s">
+                <span class="icon"></span>
+                <span class="label ellipsized showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">Publicaciones en español (1950-2024)</span>
+            </a>
+            <div id="cookieLibrary">
+
+            </div>
+        </div>
+        <div class="currentUser ellipsized">
+            <a id="userStatusLabel" class="statusLabel" href="#">
+                <span class="userName ellipsized"></span>
+            </a>
+            <div id="userControls" class="userControls hidden">
+                                <span id="headerLogout" class="hidden">
+              <a class="statusItem userLogoutLink" href="#">Cerrar sesión</a>                </span>
+            </div>
+        </div>
+        <div id="headerLogin" class="hidden">
+      <a class="statusButton userLoginLink" href="#">Iniciar sesión</a>        </div>
+    </div>
+          </div>
+
+    <div id="regionMain" class="unified navLeft hasUserStatus showRuby ml-S ms-ROMAN dir-ltr " lang="es" data-lang="S" dir="ltr" >
+              
+<div id="documentCitationInformation">
+    <div></div>
+    <div></div>
+</div>
+
+<div id="content" class="content">
+          <div id="banner" class="siteBanner showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+              </div>
+        <article id="article" class="article home html5 jwac showRuby ml-S ms-ROMAN dir-ltr contentOnly" lang="es" data-lang="S" dir="ltr"             role="article">
+      <div id="home" class="clearfix">
+        <div id="welcome" class="noTooltips">
+        <div class="welcomeContainer">
+            <div class="siteTitle">BIBLIOTECA EN LÍNEA Watchtower</div>
+            <div class="siteTitleLine1 light">Watchtower</div>
+            <div class="siteTitleLine2 dark">BIBLIOTECA EN LÍNEA</div>
+            <div class="siteGreeting">¡Bienvenido!</div>
+            <div class="siteAbout">En esta página podrá consultar publicaciones de los testigos de Jehová en varios idiomas.</div>
+            <div
+                class="siteParentLink ">Para descargar publicaciones, visite <a href='https://www.jw.org/finder?wtlocale=S&docid=1011200' target='_blank'>jw.org</a>.</div>
+        </div>
+            </div>
+    <div id="dailyText" class="scalableui dailyText docClass-4 ">
+          <div id="todayNav" class="forwardBackNavControls" role="navigation">
+        <nav>
+              <div class="resultNavControls">
+        <ul>
+            <li  id="footerPrevDay" class="resultNavLeft  "><a href="/es/wol/h/r4/lp-s/2024/8/11" aria-label="día anterior"><span class="icon navContent"></span></a></li><li  id="navigationDailyTextToday" class="todayNav  "><a href="/es/wol/h/r4/lp-s"><span class="navContent">Hoy</span></a></li><li  id="footerNextDay" class="resultNavRight  "><a href="/es/wol/h/r4/lp-s/2024/8/13" aria-label="día siguiente"><span class="icon navContent"></span></a></li>        </ul>
+    </div>
+        </nav>
+      </div>
+           <div class="articlePositioner">
+                <div class="tabContent" data-date="2024-08-11T00:00:00.000Z">
+                      <header>
+<h2 id="p32" data-pid="32">Domingo 11 de agosto</h2>
+</header>
+<p id="p33" data-pid="33" class="themeScrp"><em>Todas las naciones los odiarán por causa de mi nombre (</em><a href="/es/wol/bc/r4/lp-s/1102024207/43/0" data-bid="44-1" class="b"><em>Mat. 24:9</em></a><em>).</em></p>
+<div class="bodyTxt">
+<div id="section1" class="section">
+<div class="pGroup">
+<p id="p34" data-pid="34" class="sb">Ese odio demuestra que seguimos el ejemplo de Jesús y tenemos la aprobación de Jehová (<a href="/es/wol/bc/r4/lp-s/1102024207/44/0" data-bid="45-1" class="b">Mat. 5:11, 12</a>). El Diablo está detrás de toda esta oposición, pero él no es rival para Jesús. Con el apoyo de Cristo, el mensaje del Reino está llegando a personas de todas las naciones. Otro obstáculo que afrontamos en la predicación es la gran cantidad de idiomas que hay. En la visión que Jesús le dio al apóstol Juan, dio a entender que eso no impediría que se anunciaran las buenas noticias (<a href="/es/wol/bc/r4/lp-s/1102024207/45/0" data-bid="46-1" class="b">Apoc. 14:6, 7</a>). ¿Cómo hemos conseguido superar ese obstáculo? Poniendo a disposición del público en nuestro sitio web, jw.org, información bíblica en más de 1.000 idiomas. Además, el Cuerpo Gobernante ha dado permiso para que se traduzca a más de 700 idiomas nuestro principal manual para dar cursos bíblicos, el libro <em>Disfrute de la vida.</em> De este modo, más personas que nunca antes tienen la oportunidad de aceptar el mensaje del Reino. <a href="/es/wol/pc/r4/lp-s/1102024207/10/0"><em>w22.07</em> 9 párrs. 6, 7</a></p>
+</div>
+</div>
+</div>
+              <a href="/es/wol/d/r4/lp-s/1102024207?#h=32:0-35:0">Examinemos las Escrituras todos los días 2024</a>
+              </div>
+                        <div class="tabContent" data-date="2024-08-12T00:00:00.000Z">
+                      <header>
+<h2 id="p35" data-pid="35">Lunes 12 de agosto</h2>
+</header>
+<p id="p36" data-pid="36" class="themeScrp"><em>Con muchos consejeros las cosas salen bien (</em><a href="/es/wol/bc/r4/lp-s/1102024207/46/0" data-bid="47-1" class="b"><em>Prov. 11:14</em></a><em>).</em></p>
+<div class="bodyTxt">
+<div id="section1" class="section">
+<div class="pGroup">
+<p id="p37" data-pid="37" class="sb">Jesús se compadecía de la gente. El apóstol Mateo nos cuenta: “Cuando veía a las multitudes, se conmovía profundamente, porque estaban maltratadas y abandonadas como ovejas sin pastor” (<a href="/es/wol/bc/r4/lp-s/1102024207/47/0" data-bid="48-1" class="b">Mat. 9:36</a>). ¿Y cómo ve Jehová a las personas? Hablando de su Padre, Jesús dijo: “Él no desea que ni uno solo de estos pequeños se pierda” (<a href="/es/wol/bc/r4/lp-s/1102024207/48/0" data-bid="49-1" class="b">Mat. 18:14</a>). ¡Qué alegría nos da saber que Jehová nos quiere tanto! Cuando conocemos más a Jesús, nuestro amor por Jehová se hace más grande. Joven, hay algo más que puedes hacer para que tu amor por Jehová crezca y progreses espiritualmente. ¿Qué es? Hacerte amigo de hermanos y hermanas maduros de tu congregación. Fíjate en que estos hermanos siempre están contentos. No se arrepienten de haber decidido servirle a Jehová. Pídeles que te cuenten algunas experiencias que han tenido. Y, cuando tengas que tomar una decisión importante, habla con ellos para que te den algún consejo. Con razón dice la Biblia: “Con muchos consejeros las cosas salen bien”. <a href="/es/wol/pc/r4/lp-s/1102024207/11/0"><em>w22.08</em> 3 párrs. 6, 7</a></p>
+</div>
+</div>
+</div>
+              <a href="/es/wol/d/r4/lp-s/1102024207?#h=35:0-38:0">Examinemos las Escrituras todos los días 2024</a>
+              </div>
+                        <div class="tabContent" data-date="2024-08-13T00:00:00.000Z">
+                      <header>
+<h2 id="p38" data-pid="38"><span id="page82" class="pageNum" aria-hidden="true" data-no="82" data-before-text="82"></span>Martes 13 de agosto</h2>
+</header>
+<p id="p39" data-pid="39" class="themeScrp"><em>Los ojos de Jehová están puestos en los justos (</em><a href="/es/wol/bc/r4/lp-s/1102024207/49/0" data-bid="50-1" class="b"><em>1 Ped. 3:12</em></a><em>).</em></p>
+<div class="bodyTxt">
+<div id="section1" class="section">
+<div class="pGroup">
+<p id="p40" data-pid="40" class="sb">Todos afrontaremos alguna prueba. Pero jamás tendremos que hacerlo solos. Igual que un padre cariñoso, Jehová siempre está pendiente de nosotros. Él está a nuestro lado, listo para escucharnos cuando le rogamos que nos ayude y para darnos su apoyo (<a href="/es/wol/bc/r4/lp-s/1102024207/50/0" data-bid="51-1" class="b">Is. 43:2</a>). Estamos convencidos de que podemos afrontar las dificultades porque Jehová nos da a manos llenas todo lo que necesitamos para aguantar: la oración, la Biblia, abundante alimento espiritual y una hermandad que nos trata con amor. Estamos muy agradecidos de tener un Padre celestial que está atento a nosotros. “Él es la alegría de nuestro corazón” (<a href="/es/wol/bc/r4/lp-s/1102024207/51/0" data-bid="52-1" class="b">Sal. 33:21</a>). ¿Cómo podemos demostrarle a Jehová que agradecemos que nos cuide con cariño? Aprovechando al máximo todas las ayudas que nos da. Para que Jehová nos siga cuidando, también tenemos que poner de nuestra parte. Debemos esforzarnos siempre por obedecerle y por hacer lo que él considera que está bien. Si lo hacemos, él estará pendiente de nosotros por toda la eternidad. <a href="/es/wol/pc/r4/lp-s/1102024207/12/0"><em>w22.08</em> 13 párrs. 15, 16</a></p>
+</div>
+</div>
+</div>
+              <a href="/es/wol/d/r4/lp-s/1102024207?#h=38:0-41:0">Examinemos las Escrituras todos los días 2024</a>
+              </div>
+               </div>
+    </div>
+    <div id="noDailyText">
+            <div class="welcomeContainer">
+                <div class="siteGreeting">¡Bienvenido!</div>
+                <div class="siteAbout">En esta página podrá consultar publicaciones de los testigos de Jehová en varios idiomas.</div>
+                <div class="siteParentLink">Para descargar publicaciones, visite <a href='https://www.jw.org/finder?wtlocale=S&docid=1011200' target='_blank'>jw.org</a>.</div>
+            </div>
+    </div>
+</div>
+<input type="hidden" id="hasRuby" value="false" />
+<input type="hidden" id="isRuby" value="false" />
+<input type="hidden" id="shareBaseUrl" value="https://www.jw.org/finder?wtlocale=S&alias=daily-text&date=2024-08-12&srctype=wol&srcid=share"/>
+<input type="hidden" id="shareType" value="daily-text"/>
+<input type="hidden" id="contentTitle" value="Programa semanal" />
+<input type="hidden" id="contentThumbnail" value="/wol/publication/r4/lp-s/es24/thumbnail" />
+<input type="hidden" id="todayDate" value=""/>
+<input type="hidden" id="availableData" value="2024-08-10,2024-08-11,2024-08-12,2024-08-13,2024-08-14"/>
+        </article>
+    </div>
+    </div>
+
+    <div id="regionFooter" class="chrome showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+            <div id="contentFooterNavigation" role="navigation"
+         class=" showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+        <ul class="contentFooterIcons" role="menubar" class="chrome">
+            <li id="libraryTitle"
+                class="chrome"
+                role="menuitem"
+        lang="es" data-lang="S" dir="ltr">
+                <a class="spriteLink"
+                   data-lang="S"
+                   href="/es/wol/li/r4/lp-s">
+                    <span class="icon"></span>
+                    <span class="label">Español</span>
+                </a>
+            </li>
+
+                      <li id="contentFooterShare" role="menuitem" aria-label="compartir">
+              <a id="shareButtonFooter" class="shareButtonFooterIcon spriteLink hidden" href="#">
+                <span class="icon"></span>
+                <span class="label">Compartir</span>
+              </a>
+            </li>
+          
+            <li id="contentFooterPreferences" role="menuitem" aria-label="configuración">
+                <a class="spriteLink" href="/es/wol/pref/r4/lp-s?url=%2Fes%2Fwol%2Fh%2Fr4%2Flp-s" rel="nofollow">
+                    <span class="icon"></span>
+                    <span class="label">Configuración</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+<div id="contentFooterLegal" class=" showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+    <ul class="contentFooterList" role="menubar">
+        <li class="showRuby ml-E ms-ROMAN dir-ltr" lang="en" data-lang="E" dir="ltr">
+                      <a href="https://www.jw.org/finder?prefer=content&wtlocale=S&docid=1011511"
+                   target="_blank">Copyright</a>
+                  &copy;&nbsp;2024&nbsp;Watch Tower Bible and Tract Society of Pennsylvania        </li>
+                    <li>
+                <a href="https://www.jw.org/finder?prefer=content&wtlocale=S&docid=1011511"
+                   target="_blank">Condiciones de uso</a>
+            </li>
+            <li>
+                <a href="https://www.jw.org/finder?prefer=content&wtlocale=S&docid=1011512"
+                   target="_blank">Política de privacidad</a>
+            </li>
+                    <li>
+                <a href="https://www.jw.org/finder?prefer=content&wtlocale=S&docid=1011512"
+                   id="privacySettingsButton"
+                   class="hidden"
+                   target="_blank">Configuración de privacidad</a>
+            </li>
+                    <li id="jworg" role="menuitem" aria-label="jw.org">
+                <a id="jworgLogo" class="spriteLink" target="_blank" href="https://www.jw.org/finder?wtlocale=S&docid=1011200">
+                    <span class="icon"></span>
+                    <span class="label">JW.ORG</span>
+                </a>
+            </li>
+                        <li id="footerLogin" class="clickable hidden">
+        <a class="statusButton userLoginLink" href="#">Iniciar sesión</a>            </li>
+                        </ul>
+    </div>
+    </div>
+
+    <div id="dialogContainer" class=" showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr"></div>
+    <div id="modalUnderlayContainer" class="underlay" tabindex="-1"></div>
+    <div id="underlayContainer" class="underlay" touch-action="none"></div>
+
+  <!-- share dialog -->
+  <input type="hidden" id="mobileNativeShare" value=""/>
+  <div class="jwac showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+    <div id="shareForm" class="hidden">
+      <div>
+        <div class="header chrome">
+          Compartir         <div class="closeBtn" aria-label="cerrar" onclick="app.modal.removeModals();">
+            <span class="icon"></span>
+          </div>
+        </div>
+        <form class="content">
+          <div class="shareFormWrapper">
+            <div>
+              <img class="sharePublicationImage" />
+            </div>
+            <div class="shareInfoContainer">
+              <div class="jwac showRuby ml-S ms-ROMAN dir-ltr" lang="es" data-lang="S" dir="ltr">
+                <div class="shareContentParentTitle"></div>
+                <div class="shareContentTitle"></div>
+              </div>
+              <input id="shareLink" class="shareLink" type="text" readonly
+                   dir="ltr" />
+              <button type="button" class="grayButton small shareCopyButton"
+                  aria-label="copiar"
+                  onClick="app.utilities.copyToClipboard(document.getElementById('shareLink').value)">
+                <span class="icon"></span>
+              </button>
+              <div class="shareButtonContainer">
+                <button type="button" class="grayButton shareMailButton" onClick="app.share.sendEmail();">
+                  <span class="icon"></span>
+                  Compartir por e-mail                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end share dialog -->
+</div>
+
+<input type="hidden" id="newMeetingsPage" value="yes"/>
+
+
+<script src="https://b.jw-cdn.org/code/media-player/v3.0.0/js/media-player.min.js"></script>
+<script src="https://wol.jw.org/assets/js/+1+32b2df3c1e53018e83d7dccb491a6767060086eb.js"></script>
+<script src="https://wol.jw.org/assets/js/+2+65fd71e30875e1cca0aa8be60ee106d65c415d9a.js"></script>
+
+</body>
+</html>
+
+   `;
+    editor.setValue(code); // Establece el valor del editor con el código
+    editor.gotoLine(1); // Coloca el cursor en la primera línea
+  });
+
+document.getElementById("refreshButton").addEventListener("click", function() {
+  location.reload();
+});
+
+
