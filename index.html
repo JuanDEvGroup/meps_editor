@@ -19,16 +19,33 @@
 <body onload="ready()">
   <div><img id="blank" src="https://juandevgroup.github.io/blank.jpeg" width="100px"></div>
   <img id="favicon" src="https://juandevgroup.github.io/meps_logo.png">
+
+  <!-- Botón para cargar código en el editor WOL-->
+<button id="loadwol-code-btn">Cargar código de ejemplo:WOL.JW.ORG</button>
+
   <!-- Botón para cargar código en el editor -->
 <button id="load-code-btn">Cargar código de ejemplo:JW.ORG</button>
 
   <!-- Botón para borrar todo el contenido del editor -->
 <button id="clear-btn">Borrar todo</button>
+
   <!-- Botón para exportar HTML -->
     <button id="export-btn">Exportar HTML</button>
-  <div id="container">
+
+    <!-- Botón para importar HTML -->
+    <button id="import-btn">Importar HTML</button>
+    <input type="file" id="html-file-input" style="display: none;">
+
+    <button id="refreshButton">Reiniciar el editor</button>
+
+   
+
+
+
+
+  <div id="container">  
     <!-- Left Side Editor -->
-    <div id="editor"></div>
+    <div id="editor" contenteditable="true"></div>
 
     <!-- Right Side preview -->
     <iframe src="" frameborder="0" id="iframe"></iframe>
@@ -39,6 +56,7 @@
 
 </html>
 <!-- partial -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script  src="./script.js"></script>
 
 </body>
