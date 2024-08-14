@@ -26,13 +26,13 @@ body {
 }
 
  #export-btn {
-    /* Estilos del botón */
-    background-color: #4CAF50; /* Verde claro */
-    color: #ffffff; /* Blanco */
-    padding: 10px 20px; /* Espacio entre el texto y el borde */
-    border: none; /* No borde */
-    border-radius: 5px; /* Curva en los bordes */
-    cursor: pointer; /* Cursor en forma de mano */
+    /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+  cursor: pointer;
   }
 
   #export-btn:hover {
@@ -47,13 +47,13 @@ body {
   }
 
   #clear-btn {
-    /* Estilos del botón */
-    background-color: #4CAF50; /* Verde claro */
-    color: #ffffff; /* Blanco */
-    padding: 10px 20px; /* Espacio entre el texto y el borde */
-    border: none; /* No borde */
-    border-radius: 5px; /* Curva en los bordes */
-    cursor: pointer; /* Cursor en forma de mano */
+    /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+  cursor: pointer;
   }
 
   #clear-btn:hover {
@@ -69,18 +69,18 @@ body {
 
 
    #load-code-btn {
-    /* Estilos del botón */
-    background-color: #4CAF50; /* Verde claro */
-    color: #ffffff; /* Blanco */
-    padding: 10px 20px; /* Espacio entre el texto y el borde */
-    border: none; /* No borde */
-    border-radius: 5px; /* Curva en los bordes */
-    cursor: pointer; /* Cursor en forma de mano */
+   /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+  cursor: pointer;
   }
 
   #load-code-btn:hover {
-    /* Estilos del botón al pasar el mouse por encima */
-    background-color: #3e8e41; /* Verde oscuro */
+    /* Efecto de hover */
+  background-color: #e0e0e0;
   }
 
   #load-code-btn:active {
@@ -135,19 +135,18 @@ body {
 }
 
   #import-btn {
-  background-color: #4CAF50;
-  color: #fff;
+  /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease-in-out;
 }
 
 #import-btn:hover {
-  background-color: #3e8e41;
+  /* Efecto de hover */
+  background-color: #e0e0e0;
 }
 
 #import-btn:active {
@@ -162,18 +161,18 @@ body {
 
 
    #loadwol-code-btn {
-    /* Estilos del botón */
-    background-color: #4CAF50; /* Verde claro */
-    color: #ffffff; /* Blanco */
-    padding: 10px 20px; /* Espacio entre el texto y el borde */
-    border: none; /* No borde */
-    border-radius: 5px; /* Curva en los bordes */
-    cursor: pointer; /* Cursor en forma de mano */
+    /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+  cursor: pointer;
   }
 
   #loadwol-code-btn:hover {
-    /* Estilos del botón al pasar el mouse por encima */
-    background-color: #3e8e41; /* Verde oscuro */
+  /* Efecto de hover */
+  background-color: #e0e0e0;
   }
 
   #loadwol-code-btn:active {
@@ -183,20 +182,19 @@ body {
   }
 
   #refreshButton {
-  /* Estilo del botón */
-  background-color: #4CAF50; /* Verde claro */
-  color: #fff; /* Blanco */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Relleno */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Cursor en forma de mano */
-  border-radius: 5px; /* Esquinas redondeadas */
-  transition: background-color 0.3s ease-in-out; /* Transición suave */
+  
+  /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 #refreshButton:hover {
-  /* Estilo al pasar el mouse por encima */
-  background-color: #3e8e41; /* Verde oscuro */
+ /* Efecto de hover */
+  background-color: #e0e0e0;
 }
 
 #refreshButton:active {
@@ -222,7 +220,8 @@ body {
 
 #show-iframe-btn:hover {
   /* Estilo al pasar el mouse por encima */
-  background-color: #3e8e41; /* Verde oscuro */
+  /* Efecto de hover */
+  background-color: #e0e0e0;
 }
 
 #show-iframe-btn:active {
@@ -237,17 +236,18 @@ body {
 
 /* Estilos para el botón */
 #catalog-button {
-  background-color: #4CAF50;
-  color: #fff;
+ /* Apariencia de pestaña */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  position: relative;
 }
 
 #catalog-button:hover {
-  background-color: #3e8e41;
+  /* Efecto de hover */
+  background-color: #e0e0e0;
 }
 
 /* Estilos para el contenedor del catálogo */
@@ -286,3 +286,6 @@ body {
   color: #23527c;
   text-decoration: underline;
 }
+
+
+
