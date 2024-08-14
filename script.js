@@ -9769,3 +9769,145 @@ document.getElementById("refreshButton").addEventListener("click", function() {
 });
 
 
+// Selecciona el botón y el contenedor del catálogo
+const catalogButton = document.getElementById('catalog-button');
+const catalogContainer = document.getElementById('catalog-container');
+
+// Agrega un evento de clic al botón
+catalogButton.addEventListener('click', () => {
+  // Cambia el estado de visibilidad del contenedor del catálogo
+  catalogContainer.style.display = catalogContainer.style.display === 'none' ? 'block' : 'none';
+  // Cambia el texto del botón
+  catalogButton.textContent = catalogContainer.style.display === 'block' ? 'Ocultar catálogo de JWPUBs' : 'Mostrar catálogo de JWPUBs';
+
+});
+
+document.getElementById('file1').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+
+document.getElementById('file2').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+
+document.getElementById('file3').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+
+document.getElementById('file4').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file5').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+
+document.getElementById('file6').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file7').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file8').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file9').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file10').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file11').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file12').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file13').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});
+
+document.getElementById('file14').addEventListener('click', function() {
+ Swal.fire({
+      title: 'Éxito!',
+      text: 'El archivo JWPUB se ha guardado en la carpeta de Descargas',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+});

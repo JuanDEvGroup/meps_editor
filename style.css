@@ -232,3 +232,57 @@ body {
 }
 
 
+
+
+
+/* Estilos para el botón */
+#catalog-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+#catalog-button:hover {
+  background-color: #3e8e41;
+}
+
+/* Estilos para el contenedor del catálogo */
+#catalog-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  top: 40px; /* Ajusta la posición vertical */
+  right: 0;
+  display: none;
+}
+
+#catalog-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#catalog-container li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#catalog-container li:hover {
+  background-color: #f0f0f0;
+}
+
+#catalog-container a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+#catalog-container a:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
