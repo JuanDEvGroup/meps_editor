@@ -17,38 +17,59 @@
 </head>
 
 <body onload="ready()">
-  <div><img id="blank" src="https://juandevgroup.github.io/blank.jpeg" width="100px"></div>
+  <div id="blank_space" ></div>
   <img id="favicon" src="https://juandevgroup.github.io/meps_logo.png">
 
+  <!-- Botón en forma de pestaña -->
+<button class="tab-button">Archivo</button>
+
+<!-- Menú desplegable -->
+<div class="menu-container">
+  <button class="close-button-file">×</button> <!-- Botón en forma de X -->
+  <ul class="menu-list">
+    <li><button class="menu-item" id="import-btn">Importar HTML</button>
+    <input type="file" id="html-file-input" style="display: none;"></li>
+    <li><!-- Botón para exportar HTML -->
+    <button class="menu-item" id="export-btn">Exportar HTML</button></li>
+    <li><button class="menu-item" id="catalog-button">Mostrar catálogo de JWPUBs</button></li>
+  </ul>
+</div>
+
+<!-- Botón en forma de pestaña -->
+<button class="tab-button2">Edición</button>
+<div class="menu-container2">
+  <button class="close-button-edit">×</button> <!-- Botón en forma de X -->
+  <ul class="menu-list2">
   <!-- Botón para cargar código en el editor WOL-->
-<button id="loadwol-code-btn">Cargar código de ejemplo:WOL.JW.ORG</button>
+<li><button class="menu-item2" id="loadwol-code-btn">Cargar código de ejemplo:WOL.JW.ORG</button></li>
 
   <!-- Botón para cargar código en el editor -->
-<button id="load-code-btn">Cargar código de ejemplo:JW.ORG</button>
+<li><button class="menu-item2" id="load-code-btn">Cargar código de ejemplo:JW.ORG</button></li>
 
   <!-- Botón para borrar todo el contenido del editor -->
-<button id="clear-btn">Borrar todo</button>
+<li><button class="menu-item2" id="clear-btn">Borrar todo</button></li>
+<li><button class="menu-item2" id="refreshButton">Reiniciar el editor</button></li>
 
-  <!-- Botón para exportar HTML -->
-    <button id="export-btn">Exportar HTML</button>
 
-    <!-- Botón para importar HTML -->
-    <button id="import-btn">Importar HTML</button>
-    <input type="file" id="html-file-input" style="display: none;">
+</ul>
+</div>
 
-    <button id="refreshButton">Reiniciar el editor</button>
-<!-- Botón para mostrar/ocultar el catálogo -->
+
+   
+
+   
 
 
 
 
 
 <div></div>
-<button id="catalog-button">Mostrar catálogo de JWPUBs</button>
+
 
 <!-- Contenedor del catálogo -->
 <div id="catalog-container" style="display: none;">
   <h2>Catálogo de archivos</h2>
+<button class="close-button">×</button> <!-- Botón en forma de X -->
   <ul>
     <li><a id="file1" href="archivos/mwb_S_202407.jwpub" download>Guía de actividades: Julio y Agosto.</a></li>
     <li><a id="file2" href="archivos/mwb_S_202409.jwpub" download>Guía de actividades: Septiembre y Octubre.</a></li>

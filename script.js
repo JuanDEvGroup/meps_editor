@@ -9911,3 +9911,49 @@ document.getElementById('file14').addEventListener('click', function() {
       confirmButtonText: 'Aceptar'
     });
 });
+
+
+// Obtener el botón en forma de pestaña y el menú desplegable
+const tabButton = document.querySelector('.tab-button');
+const menuContainer = document.querySelector('.menu-container');
+
+// Agregar evento de click al botón en forma de pestaña
+tabButton.addEventListener('click', () => {
+  // Mostrar o ocultar el menú desplegable
+  menuContainer.style.display = menuContainer.style.display === 'block' ? 'none' : 'block';
+});
+
+
+// Obtener el botón en forma de pestaña y el menú desplegable
+const tabButton2 = document.querySelector('.tab-button2');
+const menuContainer2 = document.querySelector('.menu-container2');
+
+// Agregar evento de click al botón en forma de pestaña
+tabButton2.addEventListener('click', () => {
+  // Mostrar o ocultar el menú desplegable
+  menuContainer2.style.display = menuContainer2.style.display === 'block' ? 'none' : 'block';
+});
+
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', () => {
+// Cambia el estado de visibilidad del contenedor del catálogo
+  catalogContainer.style.display = catalogContainer.style.display === 'none' ? 'block' : 'none';
+  // Cambia el texto del botón
+  catalogButton.textContent = catalogContainer.style.display === 'block' ? 'Ocultar catálogo de JWPUBs' : 'Mostrar catálogo de JWPUBs';
+
+});
+
+
+const closeButtonedit = document.querySelector('.close-button-edit');
+// Agregar evento de click al botón en forma de pestaña
+closeButtonedit.addEventListener('click', () => {
+  // Mostrar o ocultar el menú desplegable
+  menuContainer2.style.display = menuContainer2.style.display === 'block' ? 'none' : 'block';
+});
+
+const closeButtonfile = document.querySelector('.close-button-file');
+// Agregar evento de click al botón en forma de pestaña
+closeButtonfile.addEventListener('click', () => {
+  // Mostrar o ocultar el menú desplegable
+  menuContainer.style.display = menuContainer.style.display === 'block' ? 'none' : 'block';
+});
